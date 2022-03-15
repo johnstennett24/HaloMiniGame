@@ -1,3 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System;
+using HaloMiniGame.Game.Directing;
+using HaloMiniGame.Game.Services;
 
-Console.WriteLine("Hello, teammates! Sorry I can't come in today-Cayleigh");
+namespace
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Director director = new Director(SceneManager.VideoService);
+            director.StartGame();
+        }
+    }
+}
