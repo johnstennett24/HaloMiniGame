@@ -12,8 +12,8 @@ namespace MiniHaloGame{
         /// </inheritdoc>
         public Point GetCoordinates()
         {
-            int x = Raylib.GetMouseX();
-            int y = Raylib.GetMouseY();
+            float x = Raylib.GetMouseX();
+            float y = Raylib.GetMouseY();
             return new Point(x, y);
         }
 

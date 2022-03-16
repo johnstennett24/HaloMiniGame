@@ -7,16 +7,16 @@ namespace MiniHaloGame
 
     public class KeyboardService
     {
-        private int cellSize = 15;
+        private float cellSize = 15;
 
-        public KeyboardService(int cellSize)
+        public KeyboardService(float cellSize)
         {
             this.cellSize = cellSize;
         }
         public Point GetDirection()
         {
-            int dx = 0;
-            int dy = 0;
+            float dx = 0;
+            float dy = 0;
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
             {
