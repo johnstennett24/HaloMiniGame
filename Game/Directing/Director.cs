@@ -16,11 +16,39 @@ namespace HaloMiniGame.Game.Directing
         /// Construct a new instance of Director using VideoService
         public Director(VideoService videoService)
         {
-            this.videoService = videoService
+            this.videoService = videoService();
             this.cast = new Cast();
             this.script = new Script();
             this.sceneManager = new SceneManager();
         }
 
+        public void OnNext(string scene)
+        {
+            sceneManager.PrepareScene(scene, cast, script);
+        }
+
+        public void StartGame()
+        {
+            OnNext(Constants.NRE_GAME);
+            ExecuteActions(Constants.INITIALIZE);
+            ExecuteActions(Constants.LOAD);
+            while (videoService.IsWindowOpen())
+            {
+                ExecuteActions(Constants.INPUT);
+                ExecuteActions(Constants.UPDATE);
+                ExecuteActions(Constants.OUTPUT);
+            }
+                ExecuteActions(Constants.UNLOAD);
+                ExecuteActions(Constants.RELEASE);
+        }
+
+        private void ExecuteActions(string group)
+        {
+            List<Action> actions = script.GetActions(group);
+            foreach(Action action in actions)
+            {
+                action.Execute(cast, script, this);
+            }
+        }
     }
 }
