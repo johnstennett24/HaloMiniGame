@@ -2,7 +2,7 @@
 using HaloMiniGame.Game.Directing;
 using HaloMiniGame.Game.Services;
 
-namespace
+namespace HaloMiniGame
 {
     public class Program
     {
