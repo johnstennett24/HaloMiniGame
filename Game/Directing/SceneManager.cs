@@ -139,15 +139,15 @@ namespace HaloMiniGame.Game.Directing
         // casting methods
         // -----------------------------------------------------------------------------------------
 
-        private void AddBall(Cast cast)
+        private void AddMasterChief(Cast cast)
         {
-            cast.ClearActors(Constants.BALL_GROUP);
+            cast.ClearActors(Constants.MASTERCHIEF_GROUP);
         
-            int x = Constants.CENTER_X - Constants.BALL_WIDTH / 2;
-            int y = Constants.SCREEN_HEIGHT - Constants.RACKET_HEIGHT - Constants.BALL_HEIGHT;
+            int x = Constants.CENTER_X;
+            int y = Constants.CENTER_Y;
         
             Point position = new Point(x, y);
-            Point size = new Point(Constants.BALL_WIDTH, Constants.BALL_HEIGHT);
+            Point size = new Point(Constants.MASTERCHIEF_WIDTH, Constants.MASTERCHIEF_HEIGHT);
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
@@ -157,9 +157,9 @@ namespace HaloMiniGame.Game.Directing
             cast.AddActor(Constants.BALL_GROUP, ball);
         }
 
-        private void AddBricks(Cast cast)
+        private void AddMonsters(Cast cast)
         {
-            cast.ClearActors(Constants.BRICK_GROUP);
+            cast.ClearActors(Constants.MONSTERS_GROUP);
 
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             int level = stats.GetLevel() % Constants.BASE_LEVELS;
@@ -226,24 +226,6 @@ namespace HaloMiniGame.Game.Directing
 
             Label label = new Label(text, position);
             cast.AddActor(Constants.LIVES_GROUP, label);   
-        }
-
-        private void AddRacket(Cast cast)
-        {
-            cast.ClearActors(Constants.RACKET_GROUP);
-        
-            int x = Constants.CENTER_X - Constants.RACKET_WIDTH / 2;
-            int y = Constants.SCREEN_HEIGHT - Constants.RACKET_HEIGHT;
-        
-            Point position = new Point(x, y);
-            Point size = new Point(Constants.RACKET_WIDTH, Constants.RACKET_HEIGHT);
-            Point velocity = new Point(0, 0);
-        
-            Body body = new Body(position, size, velocity);
-            Animation animation = new Animation(Constants.RACKET_IMAGES, Constants.RACKET_RATE, 0);
-            Racket racket = new Racket(body, animation, false);
-        
-            cast.AddActor(Constants.RACKET_GROUP, racket);
         }
 
         private void AddScore(Cast cast)
