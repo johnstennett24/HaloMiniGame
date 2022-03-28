@@ -86,10 +86,10 @@ namespace HaloMiniGame
         public static int HUD_MARGIN = 15;
         public static string LEVEL_GROUP = "level";
         public static string LIVES_GROUP = "lives";
-        public static string SCORE_GROUP = "score";
+        public static string TIMER_GROUP = "timer";
         public static string LEVEL_FORMAT = "LEVEL: {0}";
         public static string LIVES_FORMAT = "LIVES: {0}";
-        public static string SCORE_FORMAT = "SCORE: {0}";
+        public static string TIMER_FORMAT = "TIMER: {0}";
 
         // // Captain - Personage
         public static string MASTERCHIEF_GROUP = "masterchief";

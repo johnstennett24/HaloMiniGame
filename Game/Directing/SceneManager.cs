@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using HaloMiniGame.Game.Casting;
 using HaloMiniGame.Scripting;
-using HaloMiniGame.Services;
+using HaloMiniGame.Game.Services;
 
 
 namespace HaloMiniGame.Game.Directing
@@ -49,10 +49,9 @@ namespace HaloMiniGame.Game.Directing
         {
             AddStats(cast);
             AddLevel(cast);
-            AddScore(cast);
             AddLives(cast);
-            AddMasterChief(cast);
-            AddMonsters(cast);
+            AddMC(cast);
+            AddEnemy(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
 
             script.ClearAllActions();
@@ -76,7 +75,7 @@ namespace HaloMiniGame.Game.Directing
 
         private void PrepareNextLevel(Cast cast, Script script)
         {
-            AddMasterChief(cast);
+            AddMC(cast);
             AddMonsters(cast);
             AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
@@ -85,8 +84,7 @@ namespace HaloMiniGame.Game.Directing
             TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
             script.AddAction(Constants.INPUT, ta);
 
-            AddOutputActions(script);
-
+            AddOutputActions(script)
             PlaySoundAction sa = new PlaySoundAction(AudioService, Constants.WELCOME_SOUND);
             script.AddAction(Constants.OUTPUT, sa);
         }
@@ -139,7 +137,7 @@ namespace HaloMiniGame.Game.Directing
         // casting methods
         // -----------------------------------------------------------------------------------------
 
-        private void AddMasterChief(Cast cast)
+        private void AddMC(Cast cast)
         {
             cast.ClearActors(Constants.MASTERCHIEF_GROUP);
         
@@ -157,7 +155,7 @@ namespace HaloMiniGame.Game.Directing
             cast.AddActor(Constants.BALL_GROUP, ball);
         }
 
-        private void AddMonsters(Cast cast)
+        private void AddEnemy(Cast cast)
         {
             cast.ClearActors(Constants.MONSTERS_GROUP);
 
@@ -228,16 +226,16 @@ namespace HaloMiniGame.Game.Directing
             cast.AddActor(Constants.LIVES_GROUP, label);   
         }
 
-        private void AddScore(Cast cast)
+        private void AddTimer(Cast cast)
         {
-            cast.ClearActors(Constants.SCORE_GROUP);
+            cast.ClearActors(Constants.TIMER_GROUP);
 
-            Text text = new Text(Constants.SCORE_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
+            Text text = new Text(Constants.TIMER_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
                 Constants.ALIGN_CENTER, Constants.WHITE);
             Point position = new Point(Constants.CENTER_X, Constants.HUD_MARGIN);
             
             Label label = new Label(text, position);
-            cast.AddActor(Constants.SCORE_GROUP, label);   
+            cast.AddActor(Constants.TIMER_GROUP, label);   
         }
 
         private void AddStats(Cast cast)
