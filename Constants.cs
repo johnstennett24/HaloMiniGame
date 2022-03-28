@@ -93,11 +93,11 @@ namespace HaloMiniGame
 
         // // Captain - Personage
         public static string MASTERCHIEF_GROUP = "masterchief";
-        //Master chief sprint
-        //public static string MASTERCHIEF_IMAGE = "Assets/Images/000.png";
-        // public static int MASTERCHIEF_WIDTH = 28;
-        // public static int MASTERCHIEF_HEIGHT = 28;
-        // public static int MASTERCHIEF_VELOCITY = 6;
+        // Master chief sprint
+        public static string MASTERCHIEF_IMAGE = "Assets/Images/000.png";
+        public static int MASTERCHIEF_WIDTH = 20;
+        public static int MASTERCHIEF_HEIGHT = 28;
+        public static int MASTERCHIEF_VELOCITY = 6;
 
         // // RACKET - Example of how handle the sprints of the captain
         // public static string RACKET_GROUP = "rackets";
