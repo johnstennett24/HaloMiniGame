@@ -1,7 +1,7 @@
 using System;
 
 
-namespace Unit06.Game.Casting
+namespace HaloMiniGame.Game.Casting
 {
     /// <summary>
     /// <para>A thing that participates in the game.</para>

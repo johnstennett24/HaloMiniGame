@@ -2,7 +2,7 @@ using MiniHaloGame.Casting;
 using MiniHaloGame.Scripting;
 
 
-namespace MiniHaloGame.Scripting
+namespace HaloMiniGame.Game.Scripting
 {
     public class CollideBordersAction : Action
     {

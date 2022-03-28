@@ -1,8 +1,8 @@
 using Raylib_cs;
-
+using HaloMiniGame.Game.Casting;
 //borrowed from week 04 assingment
 
-namespace MiniHaloGame
+namespace HaloMiniGame.Game.Services
 {
 
     public class KeyboardService

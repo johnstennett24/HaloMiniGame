@@ -1,6 +1,6 @@
 using System;
 
-namespace Unit06.Game.Casting
+namespace HaloMiniGame.Game.Casting
 {
     public class bullet : Actor
     {

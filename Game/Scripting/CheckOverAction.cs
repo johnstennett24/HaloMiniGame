@@ -1,7 +1,7 @@
 using MiniHaloGame;
 
 
-namespace MiniHaloGame.Scripting
+namespace HaloMiniGame.Game.Scripting
 {
     public class CheckOverAction : Action
     {
