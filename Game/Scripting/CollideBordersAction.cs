@@ -1,5 +1,6 @@
-using MiniHaloGame.Casting;
-using MiniHaloGame.Scripting;
+using HaloMiniGame.Game.Services;
+using HaloMiniGame.Game.Casting;
+
 
 
 namespace HaloMiniGame.Game.Scripting
@@ -7,11 +8,9 @@ namespace HaloMiniGame.Game.Scripting
     public class CollideBordersAction : Action
     {
         private AudioService audioService;
-        private PhysicsService physicsService;
         
-        public CollideBordersAction(PhysicsService physicsService, AudioService audioService)
+        public CollideBordersAction(AudioService audioService)
         {
-            this.physicsService = physicsService;
             this.audioService = audioService;
         }
 

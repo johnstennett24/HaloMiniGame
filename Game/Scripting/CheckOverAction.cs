@@ -1,4 +1,5 @@
-using MiniHaloGame;
+using HaloMiniGame.Game.Casting;
+using HaloMiniGame.Game.Services;
 
 
 namespace HaloMiniGame.Game.Scripting

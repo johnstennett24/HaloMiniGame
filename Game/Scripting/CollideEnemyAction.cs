@@ -1,4 +1,5 @@
-using MiniHaloGame;
+using HaloMiniGame.Game.Services;
+using HaloMiniGame.Game.Casting;
 
 
 namespace HaloMiniGame.Game.Scripting
@@ -6,11 +7,9 @@ namespace HaloMiniGame.Game.Scripting
     public class CollideRacketAction : Action
     {
         private AudioService audioService;
-        private PhysicsService physicsService;
         
-        public CollideRacketAction(PhysicsService physicsService, AudioService audioService)
+        public CollideRacketAction(AudioService audioService)
         {
-            this.physicsService = physicsService;
             this.audioService = audioService;
         }
 
@@ -20,13 +19,6 @@ namespace HaloMiniGame.Game.Scripting
             Racket racket = (Racket)cast.GetFirstActor(Constants.ENEMY_GROUP);
             Body ballBody = ball.GetBody();
             Body racketBody = racket.GetBody();
-
-            if (physicsService.HasCollided(racketBody, ballBody))
-            {
-                ball.BounceY();
-                Sound sound = new Sound(Constants.BOUNCE_SOUND);
-                audioService.PlaySound(sound);
-            }
         }
     }
 }
