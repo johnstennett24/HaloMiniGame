@@ -9,6 +9,7 @@ namespace HaloMiniGame
 
         public static string GAME_NAME = "Halo Mini Game";
         public static int FRAME_RATE = 60;
+        public static int CELL_SIZE = 15;
 
         // SCREEN
         public static int SCREEN_WIDTH = 1040;
