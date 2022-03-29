@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using HaloMiniGame.Game.Casting;
-using HaloMiniGame.Scripting;
+using HaloMiniGame.Game.Scripting;
 using HaloMiniGame.Game.Services;
 
 
@@ -65,17 +65,10 @@ namespace HaloMiniGame.Game.Directing
             AddReleaseActions(script);
         }
 
-        // This can be the bullet. Not sure. 
-        // private void ActivateBall(Cast cast)
-        // {
-        //     Ball ball = (Ball)cast.GetFirstActor(Constants.BALL_GROUP);
-        //     ball.Release();
-        // }
-
         private void PrepareNextLevel(Cast cast, Script script)
         {
             AddMC(cast);
-            AddMonsters(cast);
+            AddEnemy(cast);
             AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
             script.ClearAllActions();
@@ -90,8 +83,8 @@ namespace HaloMiniGame.Game.Directing
 
         private void PrepareTryAgain(Cast cast, Script script)
         {
-            AddMasterChief(cast);
-            AddMonsters(cast);
+            AddMC(cast);
+            AddEnemy(cast);
             AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
             script.ClearAllActions();
@@ -120,8 +113,7 @@ namespace HaloMiniGame.Game.Directing
 
         private void PrepareGameOver(Cast cast, Script script)
         {
-            AddBall(cast);
-            AddRacket(cast);
+            AddMC(cast);
             AddDialog(cast, Constants.WAS_GOOD_GAME);
 
             script.ClearAllActions();
@@ -138,25 +130,25 @@ namespace HaloMiniGame.Game.Directing
 
         private void AddMC(Cast cast)
         {
-            cast.ClearActors(Constants.MASTERCHIEF_GROUP);
+            cast.ClearActors(Constants.MC_GROUP);
         
             int x = Constants.CENTER_X;
             int y = Constants.CENTER_Y;
         
             Point position = new Point(x, y);
-            Point size = new Point(Constants.MASTERCHIEF_WIDTH, Constants.MASTERCHIEF_HEIGHT);
+            Point size = new Point(Constants.MC_WIDTH, Constants.MC_HEIGHT);
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Image image = new Image(Constants.BALL_IMAGE);
-            Ball ball = new Ball(body, image, false);
+            Animation animation = new Animation(Constants.MC_IMAGES, Constants.MC_RATE,0);
+            MC mc = new MC(body, animation, false);
         
-            cast.AddActor(Constants.BALL_GROUP, ball);
+            cast.AddActor(Constants.MC_GROUP, mc);
         }
 
         private void AddEnemy(Cast cast)
         {
-            cast.ClearActors(Constants.MONSTERS_GROUP);
+            cast.ClearActors(Constants.ENEMY_GROUP);
 
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             int level = stats.GetLevel() % Constants.BASE_LEVELS;

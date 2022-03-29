@@ -97,7 +97,7 @@ namespace HaloMiniGame
         public static int MC_WIDTH = 20;
         public static int MC_HEIGHT = 28;
         public static int MC_VELOCITY = 6;  
-        public static int MC_RATE = 6;
+        public static int MC_RATE = 4;
         public static List<string> MC_IMAGES
             = new List<string>() {
                 "Assets/Images/100.png",
@@ -106,29 +106,11 @@ namespace HaloMiniGame
             };
 
 
-        // BRICK
+        // ENEMY
         public static string ENEMY_GROUP = "enemy";
-        
-        // Add monsters sprint
-        public static Dictionary<string, List<string>> ENEMY_IMAGES
-            = new Dictionary<string, List<string>>() {
-                { "b", new List<string>() {
-                    "Assets/Images/010.png",
-                    "Assets/Images/011.png",
-                    "Assets/Images/012.png",
-                    "Assets/Images/013.png",
-                    "Assets/Images/014.png",
-                    "Assets/Images/015.png",
-                    "Assets/Images/016.png",
-                    "Assets/Images/017.png",
-                    "Assets/Images/018.png"
-                } }
-        };
-
+        public static string BALL_IMAGE = "Assets/Images/000.png";
         public static int ENEMY_WIDTH = 20;
         public static int ENEMY_HEIGHT = 28;
-        public static int BRICK_RATE = 6;
-
 
         // DIALOG - Create our own dialogue
         public static string DIALOG_GROUP = "dialogs";
