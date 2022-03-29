@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Raylib_cs;
 
 
-namespace Unit06.Game.Services
+namespace HaloMiniGame.Game.Services
 {
     public class RaylibKeyboardService : KeyboardService
     {
@@ -52,7 +52,7 @@ namespace Unit06.Game.Services
             { "space", Raylib_cs.KeyboardKey.KEY_SPACE }
         };
         
-        public RaylibKeyboardService()
+        public RaylibKeyboardService
         {
         }
 

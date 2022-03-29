@@ -4,7 +4,7 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using Raylib_cs;
 
-namespace MiniHaloGame
+namespace HaloMiniGame.Game.Services
 {
         public class RaylibVideoService : VideoService
     {

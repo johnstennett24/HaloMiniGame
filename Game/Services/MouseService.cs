@@ -1,7 +1,7 @@
-
+using HaloMiniGame.Game.Casting;
 
 /*taken from unit 6*/
-namespace MiniHaloGame
+namespace HaloMiniGame.Game.Services
 {
     public interface MouseService
     {

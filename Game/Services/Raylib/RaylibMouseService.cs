@@ -1,4 +1,5 @@
-namespace MiniHaloGame{
+namespace HaloMiniGame.Game.Services
+{
     public class RayllibMouseService : MouseService
     {
         private Dictionary<string, Raylib_cs.MouseButton> buttons

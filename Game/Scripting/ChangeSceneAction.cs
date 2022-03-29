@@ -1,8 +1,8 @@
-using MiniHaloGame.Services;
-using MiniHaloGame.Casting;
+using HaloMiniGame.Services;
+using HaloMiniGame.Casting;
 
 
-namespace MiniHaloGame.Scripting;
+namespace HaloMiniGame.Game.Scripting
 {
     public class ChangeSceneAction : Action
     {

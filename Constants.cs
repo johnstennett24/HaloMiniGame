@@ -127,7 +127,7 @@ namespace HaloMiniGame
         //             "Assets/Images/017.png",
         //             "Assets/Images/018.png"
         //         } }
-        };
+        // };
 
         // public static int BRICK_WIDTH = 80;
         // public static int BRICK_HEIGHT = 28;

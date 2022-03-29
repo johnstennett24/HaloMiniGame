@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Unit06.Game.Casting
+namespace HaloMiniGame.Game.Casting
 {
     /// <summary>
     /// An animation.
