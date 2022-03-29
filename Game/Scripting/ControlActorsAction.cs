@@ -2,14 +2,13 @@ using System;
 using Raylib_cs;
 using HaloMiniGame.Game.Casting;
 using HaloMiniGame.Game.Services;
+using HaloMiniGame;
 
 namespace HaloMiniGame.Game.Scripting
 {
     public class ControlActorsAction : Action
     {
-        private KeyBoardService keyBoardService;
-        private Point direction = new Point(constants.CELL_SIZE, 0);
+        private KeyboardService = KeyboardService;
+        private Point direction = new Point(Constants.CELL_SIZE, 0);
     }
-
-    
 }
