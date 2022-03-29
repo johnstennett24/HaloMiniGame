@@ -6,6 +6,6 @@ namespace HaloMiniGame.Game.Scripting
 {
     public interface Action
     {
-        void Execute(Cast cast, Script script, Actioncallback callback);
+        void Execute(Cast cast, Script script, ActionCallback callback);
     }
 }
