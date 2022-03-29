@@ -3,7 +3,7 @@ using HaloMiniGame.Game.Casting;
 using HaloMiniGame.Game.Directing;
 
 
-namespace Unit06.Game.Scripting
+namespace HaloMiniGame.Game.Scripting
 {
     /// <summary>
     /// A collection of actions.
