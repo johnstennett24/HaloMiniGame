@@ -58,8 +58,8 @@ namespace HaloMiniGame
         public static string GAME_OVER = "game_over";
 
         // LEVELS - Need tgo figured it out yet
-        // public static string LEVEL_FILE = "Assets/Data/level-{0:000}.txt";
-        // public static int BASE_LEVELS = 5;
+        public static string LEVEL_FILE = "Assets/Data/level-{0:000}.txt";
+        public static int BASE_LEVELS = 5;
 
         // ----------------------------------------------------------------------------------------- 
         // SCRIPTING CONSTANTS
@@ -93,54 +93,48 @@ namespace HaloMiniGame
         public static string TIMER_FORMAT = "TIMER: {0}";
 
         // // Captain - Personage
-        public static string MASTERCHIEF_GROUP = "masterchief";
-        // Master chief sprint
-        public static string MASTERCHIEF_IMAGE = "Assets/Images/000.png";
-        public static int MASTERCHIEF_WIDTH = 20;
-        public static int MASTERCHIEF_HEIGHT = 28;
-        public static int MASTERCHIEF_VELOCITY = 6;
-
-        // // RACKET - Example of how handle the sprints of the captain
-        // public static string RACKET_GROUP = "rackets";
-        
-        // public static List<string> RACKET_IMAGES
-        //     = new List<string>() {
-        //         "Assets/Images/100.png",
-        //         "Assets/Images/101.png",
-        //         "Assets/Images/102.png"
-        //     };
+        public static string MC_GROUP = "masterchief";
+        public static int MC_WIDTH = 20;
+        public static int MC_HEIGHT = 28;
+        public static int MC_VELOCITY = 6;  
+        public static int MC_RATE = 6;
+        public static List<string> MC_IMAGES
+            = new List<string>() {
+                "Assets/Images/100.png",
+                "Assets/Images/101.png",
+                "Assets/Images/102.png"
+            };
 
 
         // BRICK
-        public static string MONSTERS_GROUP = "monster";
+        public static string ENEMY_GROUP = "enemy";
         
         // Add monsters sprint
-        // public static Dictionary<string, List<string>> BRICK_IMAGES
-        //     = new Dictionary<string, List<string>>() {
-        //         { "b", new List<string>() {
-        //             "Assets/Images/010.png",
-        //             "Assets/Images/011.png",
-        //             "Assets/Images/012.png",
-        //             "Assets/Images/013.png",
-        //             "Assets/Images/014.png",
-        //             "Assets/Images/015.png",
-        //             "Assets/Images/016.png",
-        //             "Assets/Images/017.png",
-        //             "Assets/Images/018.png"
-        //         } }
-        // };
+        public static Dictionary<string, List<string>> ENEMY_IMAGES
+            = new Dictionary<string, List<string>>() {
+                { "b", new List<string>() {
+                    "Assets/Images/010.png",
+                    "Assets/Images/011.png",
+                    "Assets/Images/012.png",
+                    "Assets/Images/013.png",
+                    "Assets/Images/014.png",
+                    "Assets/Images/015.png",
+                    "Assets/Images/016.png",
+                    "Assets/Images/017.png",
+                    "Assets/Images/018.png"
+                } }
+        };
 
-        // public static int BRICK_WIDTH = 80;
-        // public static int BRICK_HEIGHT = 28;
-        // public static double BRICK_DELAY = 0.5;
-        // public static int BRICK_RATE = 4;
-        // public static int BRICK_POINTS = 50;
+        public static int ENEMY_WIDTH = 20;
+        public static int ENEMY_HEIGHT = 28;
+        public static int BRICK_RATE = 6;
 
-        // // DIALOG - Create our own dialogue
-        // public static string DIALOG_GROUP = "dialogs";
-        // public static string ENTER_TO_START = "PRESS ENTER TO START";
-        // public static string PREP_TO_LAUNCH = "PREPARING TO LAUNCH";
-        // public static string WAS_GOOD_GAME = "GAME OVER";
+
+        // DIALOG - Create our own dialogue
+        public static string DIALOG_GROUP = "dialogs";
+        public static string ENTER_TO_START = "PRESS ENTER TO START";
+        public static string PREP_TO_LAUNCH = "PREPARING TO LAUNCH";
+        public static string WAS_GOOD_GAME = "GAME OVER";
 
 
 

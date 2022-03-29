@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using HaloMiniGame.Game.Casting;
 using HaloMiniGame.Game.Scripting;
 using HaloMiniGame.Game.Services;
@@ -16,7 +15,7 @@ namespace HaloMiniGame.Game.Directing
         /// Construct a new instance of Director using VideoService
         public Director(VideoService videoService)
         {
-            this.videoService = videoService();
+            this.videoService = videoService;
             this.cast = new Cast();
             this.script = new Script();
             this.sceneManager = new SceneManager();
@@ -29,7 +28,7 @@ namespace HaloMiniGame.Game.Directing
 
         public void StartGame()
         {
-            OnNext(Constants.NRE_GAME);
+            OnNext(Constants.NEW_GAME);
             ExecuteActions(Constants.INITIALIZE);
             ExecuteActions(Constants.LOAD);
             while (videoService.IsWindowOpen())

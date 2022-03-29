@@ -1,5 +1,4 @@
-﻿using System;
-using HaloMiniGame.Game.Directing;
+﻿using HaloMiniGame.Game.Directing;
 using HaloMiniGame.Game.Services;
 
 namespace HaloMiniGame
