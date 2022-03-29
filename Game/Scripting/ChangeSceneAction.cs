@@ -1,5 +1,5 @@
-using HaloMiniGame.Services;
-using HaloMiniGame.Casting;
+using HaloMiniGame.Game.Services;
+using HaloMiniGame.Game.Casting;
 
 
 namespace HaloMiniGame.Game.Scripting
@@ -17,7 +17,7 @@ namespace HaloMiniGame.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            if (keyboardService.IsKeyPressed(Constants.ENTER))
+            if (keyboardService.IsKeyDown(Constants.ENTER))
             {
                 callback.OnNext(nextScene);
             }
