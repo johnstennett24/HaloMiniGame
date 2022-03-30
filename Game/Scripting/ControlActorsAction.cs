@@ -2,13 +2,42 @@ using System;
 using Raylib_cs;
 using HaloMiniGame.Game.Casting;
 using HaloMiniGame.Game.Services;
-using HaloMiniGame;
+using HaloMiniGame.Game.Directing;
 
 namespace HaloMiniGame.Game.Scripting
 {
-    public class ControlActorsAction : Action
+    public class ControlActorAction : Action
     {
-        private KeyboardService KeyboardService;
-        private Point direction = new Point(Constants.CELL_SIZE, 0);
+        private KeyboardService keyboardService;
+
+        public ControlActorAction(KeyboardService keyboardService)
+        {
+            this.keyboardService = keyboardService;
+        }
+
+        public void Execute(Cast cast, Script script, ActionCallback callback)
+        {
+            MC mc = (MC)cast.GetFirstActor(Constants.MC_GROUP);
+            if (keyboardService.IsKeyDown(Constants.LEFT))
+            {
+                MC.Left();
+            }
+            else if (keyboardService.IsKeyDown(Constants.RIGHT))
+            {
+                MC.Right();
+            }
+            else if (keyboardService.IsKeyDown(Constants.Up))
+            {
+                MC.Up();
+            }
+            else if (keyboardService.IsKeyDown(Constants.Down))
+            {
+                MC.Down();
+            }
+            else
+            {
+                MC.StopMoving();
+            }
+        }
     }
 }

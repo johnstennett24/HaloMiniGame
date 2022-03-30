@@ -43,8 +43,8 @@ namespace HaloMiniGame.Game.Directing
 
         private void ExecuteActions(string group)
         {
-            List<Action> actions = script.GetActions(group);
-            foreach(Action action in actions)
+            List<HaloMiniGame.Game.Scripting.Action> actions = script.GetActions(group);
+            foreach(HaloMiniGame.Game.Scripting.Action action in actions)
             {
                 action.Execute(cast, script, this);
             }
