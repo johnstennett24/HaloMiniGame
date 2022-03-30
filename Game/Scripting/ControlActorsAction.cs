@@ -26,11 +26,11 @@ namespace HaloMiniGame.Game.Scripting
             {
                 MC.Right();
             }
-            else if (keyboardService.IsKeyDown(Constants.Up))
+            else if (keyboardService.IsKeyDown(Constants.UP))
             {
                 MC.Up();
             }
-            else if (keyboardService.IsKeyDown(Constants.Down))
+            else if (keyboardService.IsKeyDown(Constants.DOWN))
             {
                 MC.Down();
             }
