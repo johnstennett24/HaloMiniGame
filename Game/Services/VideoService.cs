@@ -42,6 +42,8 @@ namespace HaloMiniGame.Game.Services
             }
         }
 
+        void DrawText(Text text, Point position,);
+
         public void DrawActor(Actor actor)
         {
             string text = actor.GetText();
@@ -52,7 +54,6 @@ namespace HaloMiniGame.Game.Services
             Raylib_cs.Color color = ToRaylibColor(c);
             Raylib.DrawText(text, x, y, fontSize, color);
         }
-
 
         public void DrawActors(List<Actor> actors)
         {
