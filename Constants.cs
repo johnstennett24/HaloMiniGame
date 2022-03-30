@@ -50,6 +50,9 @@ namespace HaloMiniGame
         public static string ENTER = "enter";
         public static string PAUSE = "p";
 
+        public static string UP = "up";
+        public static string DOWN = "down";
+
         // SCENES
         public static string NEW_GAME = "new_game";
         public static string TRY_AGAIN = "try_again";
@@ -111,6 +114,12 @@ namespace HaloMiniGame
         public static string BALL_IMAGE = "Assets/Images/000.png";
         public static int ENEMY_WIDTH = 20;
         public static int ENEMY_HEIGHT = 28;
+        public static Point TopSpawn = new Point(Constants.CENTER_X,0);
+        public static Point RightSpawn = new Point(Constants.SCREEN_WIDTH,Constants.CENTER_Y);
+
+        public static Point BottomSpawn = new Point(Constants.CENTER_X,Constants.SCREEN_HEIGHT);
+        public static Point LeftSpawn = new Point(0,Constants.CENTER_Y);
+
 
         // DIALOG - Create our own dialogue
         public static string DIALOG_GROUP = "dialogs";

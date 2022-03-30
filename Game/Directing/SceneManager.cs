@@ -98,8 +98,6 @@ namespace HaloMiniGame.Game.Directing
 
         private void PrepareInPlay(Cast cast, Script script)
         {
-            ActivateBall(cast);
-            cast.ClearActors(Constants.DIALOG_GROUP);
 
             script.ClearAllActions();
 
@@ -149,6 +147,10 @@ namespace HaloMiniGame.Game.Directing
         private void AddEnemy(Cast cast)
         {
             cast.ClearActors(Constants.ENEMY_GROUP);
+
+            List<Point> enemyPoints = new List<Point>();
+            enemyPoints.Add(Constants.up);
+
 
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             int level = stats.GetLevel() % Constants.BASE_LEVELS;
