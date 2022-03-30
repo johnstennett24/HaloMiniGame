@@ -1,5 +1,7 @@
 using Raylib_cs;
 using HaloMiniGame.Game.Casting;
+using HaloMiniGame.Game.Directing;
+using HaloMiniGame.Game.Scripting;
 //borrowed from week 04 assingment
 
 namespace HaloMiniGame.Game.Services

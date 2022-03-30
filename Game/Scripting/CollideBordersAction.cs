@@ -21,7 +21,6 @@ namespace HaloMiniGame.Game.Scripting
             Point position = body.GetPosition();
             int x = position.GetX();
             int y = position.GetY();
-            Sound overSound = new Sound(Constants.OVER_SOUND);
 
             if (x < Constants.FIELD_LEFT)
             {
@@ -45,7 +44,6 @@ namespace HaloMiniGame.Game.Scripting
                 else
                 {
                     callback.OnNext(Constants.GAME_OVER);
-                    audioService.PlaySound(overSound);
                 }
             }
         }
