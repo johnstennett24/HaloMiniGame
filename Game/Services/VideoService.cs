@@ -42,7 +42,10 @@ namespace HaloMiniGame.Game.Services
             }
         }
 
-        void DrawText(Text text, Point position,);
+        public void DrawText(Text text, Point position,){
+
+        }
+
 
         public void DrawActor(Actor actor)
         {
