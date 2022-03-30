@@ -12,8 +12,8 @@ namespace HaloMiniGame.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            List<Actor> bricks = cast.GetActors(Constants.BRICK_GROUP);
-            if (bricks.Count == 0)
+            List<Actor> enemies = cast.GetActors(Constants.ENEMY_GROUP);
+            if (enemies.Count == 0)
             {
                 Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
                 stats.AddLevel();

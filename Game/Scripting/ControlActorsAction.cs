@@ -8,7 +8,7 @@ namespace HaloMiniGame.Game.Scripting
 {
     public class ControlActorsAction : Action
     {
-        private KeyboardService = KeyboardService;
+        private KeyboardService KeyboardService;
         private Point direction = new Point(Constants.CELL_SIZE, 0);
     }
 }

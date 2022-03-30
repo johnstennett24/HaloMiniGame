@@ -4,9 +4,14 @@ using HaloMiniGame.Game.Casting;
 
 namespace HaloMiniGame.Game.Scripting
 {
+
+    
+
     public class CollideRacketAction : Action
     {
         private AudioService audioService;
+        MC mc = new MC();
+        Enemy1 enemy = new Enemy1();
         
         public CollideRacketAction(AudioService audioService)
         {
@@ -15,10 +20,10 @@ namespace HaloMiniGame.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Ball ball = (Ball)cast.GetFirstActor(Constants.PLAYER_GROUP);
-            Racket racket = (Racket)cast.GetFirstActor(Constants.ENEMY_GROUP);
-            Body ballBody = ball.GetBody();
-            Body racketBody = racket.GetBody();
+            MC mC = (MC)cast.GetFirstActor(Constants.MC_GROUP);
+            Enemy1 enemy = (Enemy1)cast.GetFirstActor(Constants.ENEMY_GROUP);
+            Body MCBody = mc.GetBody();
+            Body EnemyBody = enemy.GetBody();
         }
     }
 }
