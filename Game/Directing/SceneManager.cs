@@ -149,37 +149,11 @@ namespace HaloMiniGame.Game.Directing
             cast.ClearActors(Constants.ENEMY_GROUP);
 
             List<Point> enemyPoints = new List<Point>();
-            enemyPoints.Add(Constants.up);
+            enemyPoints.Add(Constants.TopSpawn);
+            enemyPoints.Add(Constants.RightSpawn);
+            enemyPoints.Add(Constants.BottomSpawn);
+            enemyPoints.Add(Constants.LeftSpawn);
 
-
-            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-            int level = stats.GetLevel() % Constants.BASE_LEVELS;
-            string filename = string.Format(Constants.LEVEL_FILE, level);
-            List<List<string>> rows = LoadLevel(filename);
-
-            for (int r = 0; r < rows.Count; r++)
-            {
-                for (int c = 0; c < rows[r].Count; c++)
-                {
-                    int x = Constants.FIELD_LEFT + c * Constants.BRICK_WIDTH;
-                    int y = Constants.FIELD_TOP + r * Constants.BRICK_HEIGHT;
-
-                    string color = rows[r][c][0].ToString();
-                    int frames = (int)Char.GetNumericValue(rows[r][c][1]);
-                    int points = Constants.BRICK_POINTS;
-
-                    Point position = new Point(x, y);
-                    Point size = new Point(Constants.BRICK_WIDTH, Constants.BRICK_HEIGHT);
-                    Point velocity = new Point(0, 0);
-                    List<string> images = Constants.BRICK_IMAGES[color].GetRange(0, frames);
-
-                    Body body = new Body(position, size, velocity);
-                    Animation animation = new Animation(images, Constants.BRICK_RATE, 1);
-                    
-                    Brick brick = new Brick(body, animation, points, false);
-                    cast.AddActor(Constants.BRICK_GROUP, brick);
-                }
-            }
         }
 
         private void AddDialog(Cast cast, string message)

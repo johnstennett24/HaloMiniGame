@@ -9,16 +9,16 @@ namespace HaloMiniGame.Game.Services
 
     public class KeyboardService
     {
-        private float cellSize = 15;
+        private int cellSize = 15;
 
-        public KeyboardService(float cellSize)
+        public KeyboardService(int cellSize)
         {
             this.cellSize = cellSize;
         }
         public Point GetDirection()
         {
-            float dx = 0;
-            float dy = 0;
+            int dx = 0;
+            int dy = 0;
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
             {
