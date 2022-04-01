@@ -16,8 +16,8 @@ namespace HaloMiniGame.Game.Services
         /// </inheritdoc>
         public Point GetCoordinates()
         {
-            float x = Raylib.GetMouseX();
-            float y = Raylib.GetMouseY();
+            int x = Raylib.GetMouseX();
+            int y = Raylib.GetMouseY();
             return new Point(x, y);
         }
 

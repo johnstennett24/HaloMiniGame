@@ -7,14 +7,14 @@ namespace HaloMiniGame.Game.Services
    
     public class VideoService
     {
-        private float cellSize = 15;
+        private int cellSize = 15;
         private string caption = "";
-        private float width = 640;
-        private float height = 480;
-        private float frameRate = 0;
+        private int width = 640;
+        private int height = 480;
+        private int frameRate = 0;
         private bool debug = false;
 
-        public VideoService(string caption, float width, float height, float cellSize, float frameRate, 
+        public VideoService(string caption, int width, int height, int cellSize, int frameRate, 
                 bool debug)
         {
             this.caption = caption;
@@ -54,9 +54,9 @@ namespace HaloMiniGame.Game.Services
         public void DrawActor(Actor actor)
         {
             string text = actor.GetText();
-            float x = actor.GetPosition().GetX();
-            float y = actor.GetPosition().GetY();
-            float fontSize = actor.GetFontSize();
+            int x = actor.GetPosition().GetX();
+            int y = actor.GetPosition().GetY();
+            int fontSize = actor.GetFontSize();
             Casting.Color c = actor.GetColor();
             Raylib_cs.Color color = ToRaylibColor(c);
             Raylib.DrawText(text, x, y, fontSize, color);
@@ -75,17 +75,17 @@ namespace HaloMiniGame.Game.Services
             Raylib.EndDrawing();
         }
 
-        public float GetCellSize()
+        public int GetCellSize()
         {
             return cellSize;
         }
 
-        public float GetHeight()
+        public int GetHeight()
         {
             return height;
         }
 
-        public float GetWidth()
+        public int GetWidth()
         {
             return width;
         }
@@ -103,21 +103,21 @@ namespace HaloMiniGame.Game.Services
 
         private void DrawGrid()
         {
-            for (float x = 0; x < width; x += cellSize)
+            for (int x = 0; x < width; x += cellSize)
             {
                 Raylib.DrawLine(x, 0, x, height, Raylib_cs.Color.GRAY);
             }
-            for (float y = 0; y < height; y += cellSize)
+            for (int y = 0; y < height; y += cellSize)
             {
                 Raylib.DrawLine(0, y, width, y, Raylib_cs.Color.GRAY);
             }
         }
         private Raylib_cs.Color ToRaylibColor(Casting.Color color)
         {
-            float r = color.GetRed();
-            float g = color.GetGreen();
-            float b = color.GetBlue();
-            float a = color.GetAlpha();
+            int r = color.GetRed();
+            int g = color.GetGreen();
+            int b = color.GetBlue();
+            int a = color.GetAlpha();
             return new Raylib_cs.Color(r, g, b, a);
         }
 
