@@ -7,7 +7,7 @@ namespace HaloMiniGame.Game.Casting
     /// <summary>
     /// 
     /// </summary>
-    public class Enemy1 : Actor
+    public class Enemy : Actor
     {
         private int health = 1;
         private Point position = new Point(0, 0);
@@ -19,7 +19,7 @@ namespace HaloMiniGame.Game.Casting
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Enemy1(Body body, Animation animation, bool debug = false) : base(debug)
+        public Enemy(Body body, Animation animation, bool debug = false) : base(debug)
         {
             this.body = body;
             this.animation = animation;

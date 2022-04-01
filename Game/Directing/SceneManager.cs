@@ -94,13 +94,27 @@ namespace HaloMiniGame.Game.Directing
             cast.ClearActors(Constants.ENEMY_GROUP);
             // add the spawn action enemies
 
-
-
             List<Point> enemyPoints = new List<Point>();
             enemyPoints.Add(Constants.TopSpawn);
             enemyPoints.Add(Constants.RightSpawn);
             enemyPoints.Add(Constants.BottomSpawn);
             enemyPoints.Add(Constants.LeftSpawn);
+
+            for (int i = 0; i < enemyPoints.Count; i ++)
+            {
+                int x = enemyPoints[i].GetX();
+                int y = enemyPoints[i].GetY();
+                Point position = new Point(x,y);
+                Point size = new Point(Constants.ENEMY_WIDTH, Constants.ENEMY_HEIGHT);
+                Point velocity = new Point(0, 0);
+
+                Body body = new Body(position, size, velocity);
+                Animation animation = new Animation(Constants.ENEMY_IMAGES, Constants.ENEMY_RATE,0);
+                Enemy enemy = new Enemy(body, animation, false);
+        
+            cast.AddActor(Constants.ENEMY_GROUP, enemy);
+                
+            }
 
         }
 

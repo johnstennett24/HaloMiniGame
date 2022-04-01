@@ -111,7 +111,7 @@ namespace HaloMiniGame
 
         // ENEMY
         public static string ENEMY_GROUP = "enemy";
-        public static string BALL_IMAGE = "Assets/Images/000.png";
+        public static string ENEMY_IMAGE = "Assets/Images/000.png";
         public static int ENEMY_WIDTH = 20;
         public static int ENEMY_HEIGHT = 28;
         public static Point TopSpawn = new Point(Constants.CENTER_X,0);
