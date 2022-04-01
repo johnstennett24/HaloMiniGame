@@ -23,40 +23,21 @@ namespace HaloMiniGame.Game.Scripting
             this.randomGenerator = new Random();
         }
 
-        private Enemy CreateAsteroid(int type, int x, int y) {
+        private int MaxWidth = Constants.SCREEN_WIDTH;
+        private int LeastWidth = 0;
+
+        private int MaxHeight = Constants.SCREEN_HEIGHT;
+
+        private int LeastHieght = 0;
+
+        private Enemy1 CreateEnemy(int type, int x, int y) {
             if (type == 1) {
-                int velX = x > this.windowSize.x/2 ? -1 : 1;
-                return new Enemy("./asteroid/assets/asteroids/asteroid_large.png",
-                                    175, 175,        // Width and height of asteroid
+                int ;
+                return new Enemy1("./asteroid/assets/asteroids/asteroid_large.png",
+                                    15, 15,           // Width and height of asteroid
                                     x, y,            // X and Y of asteroid
-                                    velX, 3,         // vX and vY of asteroid
-                                    0, 1,            // rotation and rotational velocity
-                                    93, 5,           // health bar y-offset and heath bar height
-                                    5, true,         // maxHP and whether to show health text
-                                    5);              // how many points is this asteroid worth?
-            }
-            else if (type == 2)
-            {
-                int velX = x > this.windowSize.x / 2 ? -2 : 2;
-                return new Enemy("./asteroid/assets/asteroids/asteroid_med.png",
-                                    100, 100,        // Width and height of asteroid
-                                    x, y,            // X and Y of asteroid
-                                    velX, 6,         // vX and vY of asteroid
-                                    0, 1,            // rotation and rotational velocity
-                                    55, 5,           // health bar y-offset and heath bar height
-                                    3, true,         // maxHP and whether to show health text
-                                    3);              // how many points is this asteroid worth?
-            }
-            else {
-                int velX = x > this.windowSize.x / 2 ? -3 : 3;
-                return new Enemy("./asteroid/assets/asteroids/asteroid_small.png",
-                                    40, 40,        // Width and height of asteroid
-                                    x, y,            // X and Y of asteroid
-                                    velX, 8,         // vX and vY of asteroid
-                                    0, 1,            // rotation and rotational velocity
-                                    25, 5,           // health bar y-offset and heath bar height
-                                    1, true,         // maxHP and whether to show health text
-                                    1);              // how many points is this asteroid worth?
+                                    velX, 3,         // vX and vY of enemy
+                                    1, true);              // how many points is this asteroid worth?
             }
         }
 
@@ -83,7 +64,7 @@ namespace HaloMiniGame.Game.Scripting
                 int startPosY = 0;
 
                 // Create a new asteroid with the type and position
-                Enemy enemy = this.CreateAsteroid(asteroidType, startPosX, startPosY);
+                Enemy1 enemy = this.CreateAsteroid(asteroidType, startPosX, startPosY);
 
                 // Add the newly created asteroid to the cast
                 cast.AddActor("asteroids", enemy);
