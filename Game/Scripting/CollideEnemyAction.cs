@@ -19,7 +19,7 @@ namespace HaloMiniGame.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             MC mC = (MC)cast.GetFirstActor(Constants.MC_GROUP);
-            Enemy1 enemy = (Enemy1)cast.GetFirstActor(Constants.ENEMY_GROUP);
+            Enemy enemy = (Enemy)cast.GetFirstActor(Constants.ENEMY_GROUP);
             Body MCBody = mC.GetBody();
             Body EnemyBody = enemy.GetBody();
         }

@@ -7,43 +7,30 @@ using HaloMiniGame.Game.Scripting;
 namespace HaloMiniGame.Game.Services
 {
 
-    public class KeyboardService
+    public interface KeyboardService
     {
-        private int cellSize = 15;
+        /// <summary>
+        /// Whether or not the given key is down.
+        /// </summary>
+        /// <param name="key">The given key.</param>
+        bool IsKeyDown(string key);
 
-        public KeyboardService(int cellSize)
-        {
-            this.cellSize = cellSize;
-        }
-        public Point GetDirection()
-        {
-            int dx = 0;
-            int dy = 0;
+        /// <summary>
+        /// Whether or not the given key has been pressed.
+        /// </summary>
+        /// <param name="key">The given key.</param>
+        bool IsKeyPressed(string key);
 
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
-            {
-                dx = -1;
-            }
+        /// <summary>
+        /// Whether or not the given key has been released.
+        /// </summary>
+        /// <param name="key">The given key.</param>
+        bool IsKeyReleased(string key);
 
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
-            {
-                dx = 1;
-            }
-
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_UP))
-            {
-                dy = -1;
-            }
-
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_DOWN))
-            {
-                dy = 1;
-            }
-
-            Point direction = new Point(dx, dy);
-            direction = direction.Scale(cellSize);
-
-            return direction;
-        }
+        /// <summary>
+        /// Whether or not the given key is up.
+        /// </summary>
+        /// <param name="key">The given key.</param>
+        bool IsKeyUp(string key);
     }
 }

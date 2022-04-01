@@ -5,121 +5,78 @@ using HaloMiniGame.Game.Casting;
 namespace HaloMiniGame.Game.Services
 {
    
-    public class VideoService
+    public interface VideoService
     {
-        private int cellSize = 15;
-        private string caption = "";
-        private int width = 640;
-        private int height = 480;
-        private int frameRate = 0;
-        private bool debug = false;
 
-        public VideoService(string caption, int width, int height, int cellSize, int frameRate, 
-                bool debug)
-        {
-            this.caption = caption;
-            this.width = width;
-            this.height = height;
-            this.cellSize = cellSize;
-            this.frameRate = frameRate;
-            this.debug = debug;
-        }
+        /// <summary>
+        /// Prepares the buffer for drawing.
+        /// </summary>
+        void ClearBuffer();
 
+        /// <summary>
+        /// Draws the given image at the given position.
+        /// </summary>
+        /// <param name="image">The given image.</param>
+        /// <param name="position">The given position.</param>
+        void DrawImage(HaloMiniGame.Game.Casting.Image image, Point position);
 
-        void Initialize()
-        {
+        /// <summary>
+        /// Draws a rectangle at the given position.
+        /// </summary>
+        /// <param name="size">The given size.</param>
+        /// <param name="position">The given position.</param>
+        /// <param name="color">The given color.</param>
+        /// <param name="filled">Whether or not the rectangle should be filled.</param>
+        void DrawRectangle(Point size, Point position, Casting.Color color, bool filled);
 
-        }
-    
-        public void CloseWindow()
-        {
-            Raylib.CloseWindow();
-        }
+        /// <summary>
+        /// Draws the given text at the given position.
+        /// </summary>
+        /// <param name="text">The given text.</param>
+        /// <param name="position">The given position.</param>
+        void DrawText(Text text, Point position);
 
-        public void ClearBuffer()
-        {
-            Raylib.BeginDrawing();
-            Raylib.ClearBackground(Raylib_cs.Color.BLACK);
-            if (debug)
-            {
-                DrawGrid();
-            }
-        }
+        /// <summary>
+        /// Swaps the buffers, displaying everything that has been drawn on the screen.
+        /// </summary>
+        void FlushBuffer();
 
-        public void DrawText(Text text, Point position){
+        /// <summary>
+        /// Initializes the video device.
+        /// </summary>
+        void Initialize();
 
-        }
+        /// <summary>
+        /// Whether or not the window is open.
+        /// </summary>
+        /// <returns>True if the window is open; false if it is closing.</returns>
+        bool IsWindowOpen();
 
+        /// <summary>
+        /// Loads all the font files in the given directory.
+        /// </summary>
+        /// <param name="directory">The given directory.</param>
+        void LoadFonts(string directory);
 
-        public void DrawActor(Actor actor)
-        {
-            string text = actor.GetText();
-            int x = actor.GetPosition().GetX();
-            int y = actor.GetPosition().GetY();
-            int fontSize = actor.GetFontSize();
-            Casting.Color c = actor.GetColor();
-            Raylib_cs.Color color = ToRaylibColor(c);
-            Raylib.DrawText(text, x, y, fontSize, color);
-        }
+        /// <summary>
+        /// Loads all the images files in the given directory.
+        /// </summary>
+        /// <param name="directory">The given directory.</param>
+        void LoadImages(string directory);
 
-        public void DrawActors(List<Actor> actors)
-        {
-            foreach (Actor actor in actors)
-            {
-                DrawActor(actor);
-            }
-        }
+        /// <summary>
+        /// Releases the video device.
+        /// </summary>
+        void Release();
 
-        public void FlushBuffer()
-        {
-            Raylib.EndDrawing();
-        }
+        /// <summary>
+        /// Unloads the cached images.
+        /// </summary>
+        void UnloadFonts();
 
-        public int GetCellSize()
-        {
-            return cellSize;
-        }
-
-        public int GetHeight()
-        {
-            return height;
-        }
-
-        public int GetWidth()
-        {
-            return width;
-        }
-
-        public bool IsWindowOpen()
-        {
-            return !Raylib.WindowShouldClose();
-        }
-        public void OpenWindow()
-        {
-            Raylib.InitWindow(width, height, caption);
-            Raylib.SetTargetFPS(frameRate);
-        }
-
-
-        private void DrawGrid()
-        {
-            for (int x = 0; x < width; x += cellSize)
-            {
-                Raylib.DrawLine(x, 0, x, height, Raylib_cs.Color.GRAY);
-            }
-            for (int y = 0; y < height; y += cellSize)
-            {
-                Raylib.DrawLine(0, y, width, y, Raylib_cs.Color.GRAY);
-            }
-        }
-        private Raylib_cs.Color ToRaylibColor(Casting.Color color)
-        {
-            int r = color.GetRed();
-            int g = color.GetGreen();
-            int b = color.GetBlue();
-            int a = color.GetAlpha();
-            return new Raylib_cs.Color(r, g, b, a);
-        }
-
+        /// <summary>
+        /// Unloads the cached fonts.
+        /// </summary>
+        void UnloadImages();
     }
 }
