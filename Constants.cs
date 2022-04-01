@@ -116,7 +116,6 @@ namespace HaloMiniGame
         public static int ENEMY_HEIGHT = 28;
         public static Point TopSpawn = new Point(Constants.CENTER_X,0);
         public static Point RightSpawn = new Point(Constants.SCREEN_WIDTH,Constants.CENTER_Y);
-
         public static Point BottomSpawn = new Point(Constants.CENTER_X,Constants.SCREEN_HEIGHT);
         public static Point LeftSpawn = new Point(0,Constants.CENTER_Y);
 

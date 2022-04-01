@@ -14,7 +14,7 @@ namespace HaloMiniGame.Game.Services
 
         void Release();
 
-        void UploadSounds();
+        void UnloadSounds();
 
     }
 }
