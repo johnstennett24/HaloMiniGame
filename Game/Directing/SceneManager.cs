@@ -26,18 +26,6 @@ namespace HaloMiniGame.Game.Directing
             {
                 PrepareNewGame(cast, script);
             }
-            else if (scene == Constants.NEXT_LEVEL)
-            {
-                PrepareNextLevel(cast, script);
-            }
-            else if (scene == Constants.TRY_AGAIN)
-            {
-                PrepareTryAgain(cast, script);
-            }
-            else if (scene == Constants.IN_PLAY)
-            {
-                PrepareInPlay(cast, script);
-            }
             else if (scene == Constants.GAME_OVER)
             {
                 PrepareGameOver(cast, script);
@@ -65,49 +53,6 @@ namespace HaloMiniGame.Game.Directing
             AddReleaseActions(script);
         }
 
-        private void PrepareNextLevel(Cast cast, Script script)
-        {
-            AddMC(cast);
-            AddEnemy(cast);
-            AddDialog(cast, Constants.PREP_TO_LAUNCH);
-
-            script.ClearAllActions();
-
-            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
-            script.AddAction(Constants.INPUT, ta);
-
-            AddOutputActions(script)
-            PlaySoundAction sa = new PlaySoundAction(AudioService, Constants.WELCOME_SOUND);
-            script.AddAction(Constants.OUTPUT, sa);
-        }
-
-        private void PrepareTryAgain(Cast cast, Script script)
-        {
-            AddMC(cast);
-            AddEnemy(cast);
-            AddDialog(cast, Constants.PREP_TO_LAUNCH);
-
-            script.ClearAllActions();
-            
-            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
-            script.AddAction(Constants.INPUT, ta);
-            
-            AddUpdateActions(script);
-            AddOutputActions(script);
-        }
-
-        private void PrepareInPlay(Cast cast, Script script)
-        {
-
-            script.ClearAllActions();
-
-            ControlMasterChiefAction action = new ControlMasterChiefAction(KeyboardService);
-            script.AddAction(Constants.INPUT, action);
-
-            AddUpdateActions(script);    
-            AddOutputActions(script);
-        
-        }
 
         private void PrepareGameOver(Cast cast, Script script)
         {
@@ -147,6 +92,9 @@ namespace HaloMiniGame.Game.Directing
         private void AddEnemy(Cast cast)
         {
             cast.ClearActors(Constants.ENEMY_GROUP);
+            // add the spawn action enemies
+
+
 
             List<Point> enemyPoints = new List<Point>();
             enemyPoints.Add(Constants.TopSpawn);
@@ -212,22 +160,7 @@ namespace HaloMiniGame.Game.Directing
             cast.AddActor(Constants.STATS_GROUP, stats);
         }
 
-        private List<List<string>> LoadLevel(string filename)
-        {
-            List<List<string>> data = new List<List<string>>();
-            using(StreamReader reader = new StreamReader(filename))
-            {
-                while (!reader.EndOfStream)
-                {
-                    string row = reader.ReadLine();
-                    List<string> columns = new List<string>(row.Split(',', StringSplitOptions.TrimEntries));
-                    data.Add(columns);
-                }
-            }
-            return data;
-        }
-
-        // -----------------------------------------------------------------------------------------
+                // -----------------------------------------------------------------------------------------
         // scriptig methods
         // -----------------------------------------------------------------------------------------
 
