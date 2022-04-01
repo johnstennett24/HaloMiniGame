@@ -52,7 +52,7 @@ namespace HaloMiniGame.Game.Services
             { "space", Raylib_cs.KeyboardKey.KEY_SPACE }
         };
         
-        public RaylibKeyboardService
+        public RaylibKeyboardService()
         {
         }
 
