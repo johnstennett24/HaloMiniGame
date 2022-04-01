@@ -3,7 +3,7 @@ using HaloMiniGame.Game.Casting;
 
 namespace HaloMiniGame.Game.Services
 {
-    public class RayllibMouseService : MouseService
+    public class RaylibMouseService : MouseService
     {
         private Dictionary<string, Raylib_cs.MouseButton> buttons
                 = new Dictionary<string, Raylib_cs.MouseButton>() 

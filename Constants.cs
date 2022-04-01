@@ -31,7 +31,6 @@ namespace HaloMiniGame
         public static string SHOOTING_SOUND = "Assets/Sounds/shooting.mp3";
         public static string GETTING_SHOT_SOUND = "Assets/Sounds/gettingshot.mp3";
         public static string WALK_SOUND = "Assets/Sounds/walk.mp3";
-
         public static string OVER_SOUND = "Assets/Sounds/gameover.mp3";
 
         // TEXT
@@ -61,10 +60,6 @@ namespace HaloMiniGame
         public static string NEXT_LEVEL = "next_level";
         public static string IN_PLAY = "in_play";
         public static string GAME_OVER = "game_over";
-
-        // LEVELS - Need tgo figured it out yet
-        public static string LEVEL_FILE = "Assets/Data/level-{0:000}.txt";
-        public static int BASE_LEVELS = 5;
 
         // ----------------------------------------------------------------------------------------- 
         // SCRIPTING CONSTANTS
@@ -101,25 +96,16 @@ namespace HaloMiniGame
         public static string MC_GROUP = "masterchief";
         public static int MC_WIDTH = 20;
         public static int MC_HEIGHT = 28;
-        public static int MC_VELOCITY = 6;  
+        public static int MC_VELOCITY_X = 6;
+        public static int MC_VELOCITY_Y = 6;  
+
         public static int MC_RATE = 4;
-        public static List<string> MC_IMAGES
-            = new List<string>() {
-                "Assets/Images/100.png",
-                "Assets/Images/101.png",
-                "Assets/Images/102.png"
-            };
+        public static string MC_IMAGE = "Assets/Images/000.png";
 
 
         // ENEMY
         public static string ENEMY_GROUP = "enemy";
-        public static List<string> ENEMY_IMAGES
-            = new List<string>() {
-                "Assets/Images/100.png",
-                "Assets/Images/101.png",
-                "Assets/Images/102.png"
-            };
-
+        public static string ENEMY_IMAGE = "Assets/Images/000.png";
         public static int ENEMY_RATE = 4;
         public static int ENEMY_WIDTH = 20;
         public static int ENEMY_HEIGHT = 28;

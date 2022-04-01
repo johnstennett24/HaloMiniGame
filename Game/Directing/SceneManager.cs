@@ -83,8 +83,8 @@ namespace HaloMiniGame.Game.Directing
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Animation animation = new Animation(Constants.MC_IMAGES, Constants.MC_RATE,0);
-            MC mc = new MC(body, animation, false);
+            Image image = new Image(Constants.MC_IMAGE);
+            MC mc = new MC(body, image, false);
         
             cast.AddActor(Constants.MC_GROUP, mc);
         }
@@ -109,8 +109,8 @@ namespace HaloMiniGame.Game.Directing
                 Point velocity = new Point(0, 0);
 
                 Body body = new Body(position, size, velocity);
-                Animation animation = new Animation(Constants.ENEMY_IMAGES, Constants.ENEMY_RATE,0);
-                Enemy enemy = new Enemy(body, animation, false);
+                Image image = new Image(Constants.ENEMY_IMAGE);
+                Enemy enemy = new Enemy(body, image, false);
         
             cast.AddActor(Constants.ENEMY_GROUP, enemy);
                 
@@ -213,8 +213,8 @@ namespace HaloMiniGame.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-            script.AddAction(Constants.UPDATE, new MoveBallAction());
-            script.AddAction(Constants.UPDATE, new MoveRacketAction());
+            script.AddAction(Constants.UPDATE, new MoveMCAction());
+            script.AddAction(Constants.UPDATE, new MoveEnemyAction());
             script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideRacketAction(PhysicsService, AudioService));

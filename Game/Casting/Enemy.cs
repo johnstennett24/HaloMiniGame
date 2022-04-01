@@ -14,15 +14,15 @@ namespace HaloMiniGame.Game.Casting
         private Point velocity = new Point(0, 0);
 
         private Body body;
-        private Animation animation;
+        private Image image;
 
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Enemy(Body body, Animation animation, bool debug = false) : base(debug)
+        public Enemy(Body body, Image image, bool debug = false) : base(debug)
         {
             this.body = body;
-            this.animation = animation;
+            this.image = image;
         }
         
         /// <summary>
@@ -38,9 +38,9 @@ namespace HaloMiniGame.Game.Casting
         /// Gets the image.
         /// </summary>
         /// <returns>The image.</returns>
-        public Animation GetAnimation()
+        public Image GetImage()
         {
-            return animation;
+            return image;
         }
 
         public void MoveNext(int maxX, int maxY, Point McPosition)
