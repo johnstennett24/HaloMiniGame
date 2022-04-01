@@ -28,9 +28,11 @@ namespace HaloMiniGame
         public static int FONT_SIZE = 32;
 
         // SOUND - Need to find yet 
-        // public static string BOUNCE_SOUND = "Assets/Sounds/boing.wav";
-        // public static string WELCOME_SOUND = "Assets/Sounds/start.wav";
-        // public static string OVER_SOUND = "Assets/Sounds/over.wav";
+        public static string SHOOTING_SOUND = "Assets/Sounds/shooting.mp3";
+        public static string GETTING_SHOT_SOUND = "Assets/Sounds/gettingshot.mp3";
+        public static string WALK_SOUND = "Assets/Sounds/walk.mp3";
+
+        public static string OVER_SOUND = "Assets/Sounds/gameover.mp3";
 
         // TEXT
         public static int ALIGN_LEFT = 0;
