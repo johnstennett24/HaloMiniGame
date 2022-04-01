@@ -9,9 +9,9 @@ namespace HaloMiniGame.Game.Services
         public class RaylibVideoService : VideoService
     {
         private Casting.Color color;
-        private float height;
+        private int height;
         private string title;
-        private float width;
+        private int width;
         
         private Dictionary<string, Raylib_cs.Font> fonts
             = new Dictionary<string, Raylib_cs.Font>();
@@ -19,7 +19,7 @@ namespace HaloMiniGame.Game.Services
         private Dictionary<string, Raylib_cs.Texture2D> textures
             = new Dictionary<string, Raylib_cs.Texture2D>();
         
-        public RaylibVideoService(string title, float width, float height, Casting.Color color)
+        public RaylibVideoService(string title, int width, int height, Casting.Color color)
         {
             this.title = title;
             this.width = width;
@@ -44,8 +44,8 @@ namespace HaloMiniGame.Game.Services
                 textures[filename] = loaded;
             }
             Raylib_cs.Texture2D texture = textures[filename];
-            float x = position.GetX();
-            float y = position.GetY();
+            int x = position.GetX();
+            int y = position.GetY();
             Raylib.DrawTexture(texture, x, y, Raylib_cs.Color.WHITE);
         }
 
@@ -53,10 +53,10 @@ namespace HaloMiniGame.Game.Services
         public void DrawRectangle(Casting.Point size, Casting.Point position, Casting.Color color,
             bool filled = false)
         {
-            float x = position.GetX();
-            float y = position.GetY();
-            float width = size.GetX();
-            float height = size.GetY();
+            int x = position.GetX();
+            int y = position.GetY();
+            int width = size.GetX();
+            int height = size.GetY();
             Raylib_cs.Color raylibColor = ToRaylibColor(color);
 
             if (filled)
@@ -73,11 +73,11 @@ namespace HaloMiniGame.Game.Services
         public void DrawText(Casting.Text text, Casting.Point position)
         {
             string value = text.GetValue();
-            float size = text.GetSize();
-            float alignment = text.GetAlignment();
+            int size = text.GetSize();
+            int alignment = text.GetAlignment();
             Casting.Color color = text.GetColor();
-            float x = position.GetX();
-            float y = position.GetY();
+            int x = position.GetX();
+            int y = position.GetY();
             
             string filename = text.GetFontFile();
             if (!fonts.ContainsKey(filename))
@@ -173,9 +173,9 @@ namespace HaloMiniGame.Game.Services
             return results;
         }
 
-        private float RecalcuteTextPosition(Font font, string text, float size, float x, float alignment)
+        private int RecalcuteTextPosition(Font font, string text, int size, int x, int alignment)
         {
-            float width = (float)Raylib.MeasureTextEx(font, text, size, 0).X;
+            int width = (int)Raylib.MeasureTextEx(font, text, size, 0).X;
             if (alignment == Constants.ALIGN_CENTER)
             {
                 x = x - (width / 2);

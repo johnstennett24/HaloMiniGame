@@ -26,6 +26,10 @@ namespace HaloMiniGame.Game.Services
         }
 
 
+        void Initialize()
+        {
+
+        }
     
         public void CloseWindow()
         {
