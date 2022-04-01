@@ -12,7 +12,7 @@ namespace HaloMiniGame.Game.Scripting
         private bool asteroidSpawn;
         private DateTime lastSpawn;
         private float spawnInterval_ms;
-        private Random randomGenerator;
+        private Random random;
 
         public SpawnAsteroidsAction(int priority, (int, int) windowSize, float spawnInterval) : base(priority) {
             this.windowSize = windowSize;
@@ -20,28 +20,45 @@ namespace HaloMiniGame.Game.Scripting
             this.asteroidSpawn = false;
             this.lastSpawn = new DateTime();
             this.spawnInterval_ms = spawnInterval * 1000;
-            this.randomGenerator = new Random();
+            this.random = new Random();
         }
 
-        private int MaxWidth = Constants.SCREEN_WIDTH;
-        private int LeastWidth = 0;
-
-        private int MaxHeight = Constants.SCREEN_HEIGHT;
-
-        private int LeastHieght = 0;
-
         private Enemy1 CreateEnemy(int type, int x, int y) {
-            if (type == 1) {
-                int ;
+            if (type == 1) 
+            { 
+                Point Spawn1 = Constants.LeftSpawn;
+                return new Enemy1;
+            }
+             else if (type == 2) 
+            { 
+                Point Spawn1 = Constants.RightSpawn;
                 return new Enemy1("./asteroid/assets/asteroids/asteroid_large.png",
                                     15, 15,           // Width and height of asteroid
                                     x, y,            // X and Y of asteroid
                                     velX, 3,         // vX and vY of enemy
-                                    1, true);              // how many points is this asteroid worth?
+                                    1, true);        // how many points is this asteroid worth?
+            }
+            else if (type == 3) 
+            { 
+                Point Spawn1 = Constants.TopSpawn;
+                return new Enemy1("./asteroid/assets/asteroids/asteroid_large.png",
+                                    15, 15,           // Width and height of asteroid
+                                    x, y,            // X and Y of asteroid
+                                    velX, 3,         // vX and vY of enemy
+                                    1, true);        // how many points is this asteroid worth?
+            }
+             else 
+            { 
+                Point Spawn1 = Constants.BottomSpawn;
+                return new Enemy1("./asteroid/assets/asteroids/asteroid_large.png",
+                                    15, 15,           // Width and height of asteroid
+                                    x, y,            // X and Y of asteroid
+                                    velX, 3,         // vX and vY of enemy
+                                    1, true);        // how many points is this asteroid worth?
             }
         }
 
-        public override void execute(Cast cast, Script script, ActionCallback callback) 
+        public void Execute(Cast cast, Script script, ActionCallback callback) 
         {
             if (!this.timerStarted) {
                 this.timerStarted = true;
@@ -64,7 +81,7 @@ namespace HaloMiniGame.Game.Scripting
                 int startPosY = 0;
 
                 // Create a new asteroid with the type and position
-                Enemy1 enemy = this.CreateAsteroid(asteroidType, startPosX, startPosY);
+                Enemy1 enemy = this.CreateEnemy(type, startPosX, startPosY);
 
                 // Add the newly created asteroid to the cast
                 cast.AddActor("asteroids", enemy);
