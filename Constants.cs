@@ -100,7 +100,7 @@ namespace HaloMiniGame
         public static int MC_VELOCITY_Y = 6;  
 
         public static int MC_RATE = 4;
-        public static string MC_IMAGE = "C:/CSE 210/HaloMiniGame/HaloMiniGame/Assets/Pictures/transparent-background-layout-vector-23126529.jpg";
+        public static string MC_IMAGE = "Assets/Pictures/transparent-background-layout-vector-23126529.jpg";
 
         public static string BULLET_GROUP = "bullet";
         
@@ -108,7 +108,7 @@ namespace HaloMiniGame
 
         // ENEMY
         public static string ENEMY_GROUP = "enemy";
-        public static string ENEMY_IMAGE = "C:/CSE 210/HaloMiniGame/HaloMiniGame/Assets/Pictures/dyqfiqo.png";
+        public static string ENEMY_IMAGE = "Assets/Pictures/dyqfiqo.png";
         public static int ENEMY_RATE = 4;
         public static int ENEMY_WIDTH = 20;
         public static int ENEMY_HEIGHT = 28;
