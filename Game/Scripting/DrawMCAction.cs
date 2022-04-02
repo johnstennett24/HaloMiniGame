@@ -6,7 +6,7 @@ using HaloMiniGame.Game.Services;
 
 namespace HaloMiniGame.Game.Scripting
 {
-    public class DrawMCAction
+    public class DrawMCAction : Action
     {
         private VideoService videoService;
         public DrawMCAction(VideoService videoService)
