@@ -20,23 +20,23 @@ namespace HaloMiniGame.Game.Scripting
             MC mc = (MC)cast.GetFirstActor(Constants.MC_GROUP);
             if (keyboardService.IsKeyDown(Constants.LEFT))
             {
-                MC.Left();
+                mc.Left();
             }
             else if (keyboardService.IsKeyDown(Constants.RIGHT))
             {
-                MC.Right();
+                mc.Right();
             }
             else if (keyboardService.IsKeyDown(Constants.UP))
             {
-                MC.Up();
+                mc.Up();
             }
             else if (keyboardService.IsKeyDown(Constants.DOWN))
             {
-                MC.Down();
+                mc.Down();
             }
             else
             {
-                MC.StopMoving();
+                mc.StopMoving();
             }
         }
     }
