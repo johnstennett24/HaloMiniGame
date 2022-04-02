@@ -7,11 +7,11 @@ namespace HaloMiniGame.Game.Scripting
 
     
 
-    public class CollideRacketAction : Action
+    public class CollideEnemyAction : Action
     {
         private AudioService audioService;
         
-        public CollideRacketAction(AudioService audioService)
+        public CollideEnemyAction(AudioService audioService)
         {
             this.audioService = audioService;
         }

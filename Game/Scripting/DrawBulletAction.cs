@@ -16,8 +16,8 @@ namespace HaloMiniGame.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            List<Actor> bricks = cast.GetActors(Constants.BRICK_GROUP);
-            foreach (Actor actor in bricks)
+            List<Actor> bullets = cast.GetActors(Constants.BULLET_GROUP);
+            foreach (Actor actor in bullets)
             {
                 bullet bullet = (bullet)actor;
                 Body body = bullet.GetBody();

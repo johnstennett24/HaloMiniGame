@@ -6,11 +6,11 @@ using HaloMiniGame.Game.Directing;
 
 namespace HaloMiniGame.Game.Scripting
 {
-    public class ControlActorAction : Action
+    public class ControlActorsAction : Action
     {
         private KeyboardService keyboardService;
 
-        public ControlActorAction(KeyboardService keyboardService)
+        public ControlActorsAction(KeyboardService keyboardService)
         {
             this.keyboardService = keyboardService;
         }
