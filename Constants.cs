@@ -102,6 +102,9 @@ namespace HaloMiniGame
         public static int MC_RATE = 4;
         public static string MC_IMAGE = "Assets/Images/000.png";
 
+        public static string BULLET_GROUP = "bullet";
+        
+
 
         // ENEMY
         public static string ENEMY_GROUP = "enemy";
