@@ -193,8 +193,8 @@ namespace HaloMiniGame.Game.Directing
         {
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawBallAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawBricksAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawMCAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawenemyAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawRacketAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
@@ -213,11 +213,9 @@ namespace HaloMiniGame.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-            script.AddAction(Constants.UPDATE, new MoveMCAction());
-            script.AddAction(Constants.UPDATE, new MoveEnemyAction());
-            script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
-            script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
-            script.AddAction(Constants.UPDATE, new CollideRacketAction(PhysicsService, AudioService));
+            script.AddAction(Constants.UPDATE, new ControlActorsAction(KeyboardService));
+            script.AddAction(Constants.UPDATE, new CollideBordersAction(AudioService));
+            script.AddAction(Constants.UPDATE, new CollideEnemyAction(AudioService));
             script.AddAction(Constants.UPDATE, new CheckOverAction());     
         }
     }
