@@ -194,7 +194,7 @@ namespace HaloMiniGame.Game.Directing
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawMCAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawenemyAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawEnemyAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
 
