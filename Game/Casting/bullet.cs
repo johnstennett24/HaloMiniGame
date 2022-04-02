@@ -13,7 +13,19 @@ namespace HaloMiniGame.Game.Casting
             this.body = body;
             this.image = image;
         }
+         public Body GetBody()
+        {
+            return body;
+        }
 
+        /// <summary>
+        /// Gets the image.
+        /// </summary>
+        /// <returns>The image.</returns>
+        public Image GetImage()
+        {
+            return image;
+        }
          public void MoveNext(int maxX, int maxY, Point MousePosition)
         {
             int x = ((MousePosition.GetX() / position.GetX()) + maxX) % maxX;

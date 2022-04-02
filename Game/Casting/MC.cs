@@ -43,6 +43,33 @@ namespace HaloMiniGame.Game.Casting
             return image;
         }
 
+        public void Left()
+        {
+            Point velocity = new Point(-Constants.MC_VELOCITY_Y, 0);
+            body.SetVelocity(velocity);
+        }
+        public void Right()
+        {
+            Point velocity = new Point(Constants.MC_VELOCITY_Y, 0);
+            body.SetVelocity(velocity);
+        }
+        public void Up()
+        {
+            Point velocity = new Point(0, -Constants.MC_VELOCITY_X);
+            body.SetVelocity(velocity);
+        }
+        public void Down()
+        {
+            Point velocity = new Point(0, Constants.MC_VELOCITY_X);
+            body.SetVelocity(velocity);
+        }
+
+        public void StopMoving()
+        {
+            Point velocity = new Point(0, 0);
+            body.SetVelocity(velocity);
+        }
+
         public void MoveNext(int maxX, int maxY)
         {
             int x = ((position.GetX() + velocity.GetX()) + maxX) % maxX;
