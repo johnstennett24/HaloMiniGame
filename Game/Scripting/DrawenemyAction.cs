@@ -30,9 +30,11 @@ namespace HaloMiniGame.Game.Scripting
                     videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
                 }
 
-                Animation animation = enemy.GetAnimation();
-                Image image = animation.NextImage();
+                Image image = enemy.GetImage();
                 Point position = body.GetPosition();
                 videoService.DrawImage(image, position);
+            }
+        }
    }
+    
 }
