@@ -94,13 +94,13 @@ namespace HaloMiniGame
 
         // // Captain - Personage
         public static string MC_GROUP = "masterchief";
-        public static int MC_WIDTH = 20;
-        public static int MC_HEIGHT = 28;
+        public static int MC_WIDTH = 100;
+        public static int MC_HEIGHT = 100;
         public static int MC_VELOCITY_X = 6;
         public static int MC_VELOCITY_Y = 6;  
 
         public static int MC_RATE = 4;
-        public static string MC_IMAGE = "Assets/Pictures/000.png";
+        public static string MC_IMAGE = "Assets/Pictures/mc.png";
 
         public static string BULLET_GROUP = "bullet";
         
@@ -108,13 +108,13 @@ namespace HaloMiniGame
 
         // ENEMY
         public static string ENEMY_GROUP = "enemy";
-        public static string ENEMY_IMAGE = "Assets/Pictures/dyqfiqo.png";
+        public static string ENEMY_IMAGE = "Assets/Pictures/enemy.png";
         public static int ENEMY_RATE = 4;
-        public static int ENEMY_WIDTH = 20;
-        public static int ENEMY_HEIGHT = 28;
+        public static int ENEMY_WIDTH = 100;
+        public static int ENEMY_HEIGHT = 98;
         public static Point TopSpawn = new Point(Constants.CENTER_X,0);
-        public static Point RightSpawn = new Point(Constants.SCREEN_WIDTH,Constants.CENTER_Y);
-        public static Point BottomSpawn = new Point(Constants.CENTER_X,Constants.SCREEN_HEIGHT);
+        public static Point RightSpawn = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,Constants.CENTER_Y);
+        public static Point BottomSpawn = new Point(Constants.CENTER_X,Constants.SCREEN_HEIGHT - Constants.ENEMY_HEIGHT);
         public static Point LeftSpawn = new Point(0,Constants.CENTER_Y);
 
 
@@ -123,23 +123,6 @@ namespace HaloMiniGame
         public static string ENTER_TO_START = "PRESS ENTER TO START";
         public static string PREP_TO_LAUNCH = "PREPARING TO LAUNCH";
         public static string WAS_GOOD_GAME = "GAME OVER";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

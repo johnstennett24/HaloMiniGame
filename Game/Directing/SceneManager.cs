@@ -37,6 +37,7 @@ namespace HaloMiniGame.Game.Directing
             AddStats(cast);
             AddLevel(cast);
             AddLives(cast);
+            AddTimer(cast);
             AddMC(cast);
             AddEnemy(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
