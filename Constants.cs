@@ -100,7 +100,7 @@ namespace HaloMiniGame
         public static int MC_VELOCITY_Y = 6;  
 
         public static int MC_RATE = 4;
-        public static string MC_IMAGE = "Assets/Pictures/transparent-background-layout-vector-23126529.jpg";
+        public static string MC_IMAGE = "Assets/Pictures/000.png";
 
         public static string BULLET_GROUP = "bullet";
         

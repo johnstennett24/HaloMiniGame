@@ -19,7 +19,7 @@ namespace HaloMiniGame.Game.Scripting
         {
             audioService.LoadSounds("Assets/Sounds");
             videoService.LoadFonts("Assets/Fonts");
-            videoService.LoadImages("Assets/Images");
+            videoService.LoadImages("Assets/Pictures");
         }
     }
 }
