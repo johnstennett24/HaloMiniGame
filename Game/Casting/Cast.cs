@@ -77,9 +77,10 @@ namespace HaloMiniGame.Game.Casting
         /// Gets all the actors in the cast.
         /// </summary>
         /// <returns>A list of all actors.</returns>
-        public List<Actor> GetAllActors()
+        public List<Actor> GetAllActors(string group)
         {
             List<Actor> results = new List<Actor>();
+            results = actors[group];
             foreach (List<Actor> result in actors.Values)
             {
                 results.AddRange(result);

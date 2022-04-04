@@ -213,6 +213,7 @@ namespace HaloMiniGame.Game.Directing
         private void AddUpdateActions(Script script)
         {
             script.AddAction(Constants.UPDATE, new ControlActorsAction(KeyboardService));
+            script.AddAction(Constants.UPDATE, new MoveEnemyAction());
             script.AddAction(Constants.UPDATE, new MoveActorsAction());
             script.AddAction(Constants.UPDATE, new CollideBordersAction(AudioService));
             script.AddAction(Constants.UPDATE, new CollideEnemyAction(AudioService));
