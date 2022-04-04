@@ -1,10 +1,12 @@
 using HaloMiniGame.Game.Casting;
+using HaloMiniGame.Game.Scripting;
+using HaloMiniGame.Game.Services;
 
 namespace HaloMiniGame.Game.Scripting
 {
-    public class MoveRacketAction : Action
+    public class MoveMCAction : Action
     {
-        public MoveRacketAction()
+        public MoveMCAction()
         {
         }
 
@@ -26,8 +28,7 @@ namespace HaloMiniGame.Game.Scripting
                 position = new Point(Constants.SCREEN_WIDTH - Constants.MC_WIDTH, 
                     position.GetY());
             }
-
-            body.SetPosition(position);       
+            body.SetPosition(position);
         }
     }
 }
