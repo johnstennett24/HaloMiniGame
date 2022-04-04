@@ -27,10 +27,10 @@ namespace HaloMiniGame.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            MC mC = (MC)cast.GetFirstActor(Constants.MC_GROUP);
-            Point position = mC.GetBody().GetPosition();
-            position = position.Add(mC.GetBody().GetVelocity());
-            mC.GetBody().SetPosition(position);
+            Enemy enemy = (Enemy)cast.GetFirstActor(Constants.ENEMY_GROUP);
+            Point position = enemy.GetBody().GetPosition();
+            position = position.Add(enemy.GetBody().GetVelocity());
+            enemy.GetBody().SetPosition(position);
         }
     }
 }
