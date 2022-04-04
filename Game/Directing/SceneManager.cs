@@ -37,7 +37,6 @@ namespace HaloMiniGame.Game.Directing
             AddStats(cast);
             AddLevel(cast);
             AddLives(cast);
-            AddTimer(cast);
             AddMC(cast);
             AddEnemy(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
@@ -49,6 +48,7 @@ namespace HaloMiniGame.Game.Directing
             ChangeSceneAction a = new ChangeSceneAction(KeyboardService, Constants.NEXT_LEVEL);
             script.AddAction(Constants.INPUT, a);
 
+            AddUpdateActions(script);
             AddOutputActions(script);
             AddUnloadActions(script);
             AddReleaseActions(script);
@@ -213,6 +213,7 @@ namespace HaloMiniGame.Game.Directing
         private void AddUpdateActions(Script script)
         {
             script.AddAction(Constants.UPDATE, new ControlActorsAction(KeyboardService));
+            script.AddAction(Constants.UPDATE, new MoveActorsAction());
             script.AddAction(Constants.UPDATE, new CollideBordersAction(AudioService));
             script.AddAction(Constants.UPDATE, new CollideEnemyAction(AudioService));
             script.AddAction(Constants.UPDATE, new CheckOverAction());     

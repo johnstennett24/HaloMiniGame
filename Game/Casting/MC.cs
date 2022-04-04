@@ -10,8 +10,6 @@ namespace HaloMiniGame.Game.Casting
     public class MC : Actor
     {
         private int health = 3;
-        private Point position = new Point(0, 0);
-        private Point velocity = new Point(0, 0);
 
         private Body body;
         private Image image;
@@ -72,9 +70,9 @@ namespace HaloMiniGame.Game.Casting
 
         public void MoveNext(int maxX, int maxY)
         {
-            int x = ((position.GetX() + velocity.GetX()) + maxX) % maxX;
-            int y = ((position.GetY() + velocity.GetY()) + maxY) % maxY;
-            position = new Point(x, y);
+            // int x = ((body.GetPosition()).GetX() + velocity.GetX()) + maxX) % maxX;
+            // int y = ((position.GetY() + velocity.GetY()) + maxY) % maxY;
+            // position = new Point(x, y);
         }
     }
 }
