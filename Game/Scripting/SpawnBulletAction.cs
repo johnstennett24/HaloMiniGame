@@ -22,8 +22,9 @@ namespace HaloMiniGame.Game.Scripting
             if (keyboardService.IsKeyDown(Constants.SPACE))
             {
                 MC mC = (MC)cast.GetFirstActor(Constants.MC_GROUP);
-                Point mcPosition = mC.GetBody().GetPosition();
-                Point position = mcPosition;
+                int x  = mC.GetBody().GetPosition().GetX();
+                int y  = mC.GetBody().GetPosition().GetY();
+                Point position = new Point(x + Constants.MC_WIDTH, y +40);
                 Point size = new Point(Constants.BULLET_WIDTH, Constants.BULLET_HEIGHT);
                 Point velocity = new Point(0, 0);
 
