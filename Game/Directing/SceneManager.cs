@@ -40,7 +40,7 @@ namespace HaloMiniGame.Game.Directing
             AddLevel(cast);
             AddLives(cast);
             AddMC(cast);
-            AddEnemy(cast);
+            // AddEnemy(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
 
             script.ClearAllActions();
@@ -98,9 +98,9 @@ namespace HaloMiniGame.Game.Directing
             // add the spawn action enemies
 
             List<Point> enemyPoints = new List<Point>();
-            enemyPoints.Add(Constants.TopSpawn);
-            enemyPoints.Add(Constants.RightSpawn);
-            enemyPoints.Add(Constants.BottomSpawn);
+            enemyPoints.Add(Constants.Spawn1);
+            enemyPoints.Add(Constants.Spawn2);
+            enemyPoints.Add(Constants.Spawn3);
 
             for (int i = 0; i < enemyPoints.Count; i ++)
             {
@@ -114,7 +114,7 @@ namespace HaloMiniGame.Game.Directing
                 Image image = new Image(Constants.ENEMY_IMAGE);
                 Enemy enemy = new Enemy(body, image, false);
         
-            cast.AddActor(Constants.ENEMY_GROUP, enemy);
+                cast.AddActor(Constants.ENEMY_GROUP, enemy);
                 
             }
 
@@ -213,6 +213,7 @@ namespace HaloMiniGame.Game.Directing
 
         private void AddUpdateActions(Script script) 
         {
+            script.AddAction(Constants.UPDATE, new SpawnEnemiesAction(Constants.spawnInterval));
             script.AddAction(Constants.UPDATE, new ControlActorsAction(KeyboardService));
             script.AddAction(Constants.UPDATE, new ControlEnemyAction());
             script.AddAction(Constants.UPDATE, new MoveEnemyAction());

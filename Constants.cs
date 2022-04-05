@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using HaloMiniGame.Game.Casting;
+using HaloMiniGame.Game.Directing;
+
 
 
 namespace HaloMiniGame
@@ -114,11 +116,19 @@ namespace HaloMiniGame
         public static int ENEMY_HEIGHT = 88;
         public static int ENEMY_VELOCITY_X = 3;
         public static int ENEMY_VELOCITY_Y = 6; 
-        public static Point TopSpawn = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,100);
-        public static Point RightSpawn = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,300);
-        public static Point BottomSpawn = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,500);
-        
+        public static Point Spawn1 = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,88);
+        public static Point Spawn2 = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,176);
+        public static Point Spawn3 = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,264);
+        public static Point Spawn4 = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,352);
 
+        public static Point Spawn5 = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,440);
+
+        public static Point Spawn6 = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,528);
+
+        public static Point Spawn7 = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,616);  
+
+        public static float spawnInterval = 1.5f;
+    
 
         // DIALOG - Create our own dialogue
         public static string DIALOG_GROUP = "dialogs";
