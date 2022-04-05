@@ -50,7 +50,7 @@ namespace HaloMiniGame.Game.Scripting
 
                 // Randomly select a type from 1 to 3 (excluding the 4)
                 // 1 is large. 2 is medium. 3 is small
-                int positionNumber = this.randomGenerator.Next(1, 8);
+                int positionNumber = this.randomGenerator.Next(1, 7);
 
                 // The x-range within which the asteroid should spawn
                 // int lowerXBound = (int) (this.windowSize.x /8);

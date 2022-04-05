@@ -7,8 +7,10 @@ namespace HaloMiniGame.Game.Scripting
 {
     public class MoveActorsAction : Action
     {
-        public MoveActorsAction()
+        private AudioService audioService;
+        public MoveActorsAction(AudioService audioService)
         {
+            this.audioService = audioService;
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
