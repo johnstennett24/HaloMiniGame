@@ -94,8 +94,8 @@ namespace HaloMiniGame
 
         // // Captain - Personage
         public static string MC_GROUP = "masterchief";
-        public static int MC_WIDTH = 100;
-        public static int MC_HEIGHT = 100;
+        public static int MC_WIDTH = 90;
+        public static int MC_HEIGHT = 90;
         public static int MC_VELOCITY_X = 6;
         public static int MC_VELOCITY_Y = 6;  
 
@@ -110,8 +110,8 @@ namespace HaloMiniGame
         public static string ENEMY_GROUP = "enemy";
         public static string ENEMY_IMAGE = "Assets/Pictures/enemy.png";
         public static int ENEMY_RATE = 4;
-        public static int ENEMY_WIDTH = 100;
-        public static int ENEMY_HEIGHT = 98;
+        public static int ENEMY_WIDTH = 90;
+        public static int ENEMY_HEIGHT = 88;
         public static int ENEMY_VELOCITY_X = 3;
         public static int ENEMY_VELOCITY_Y = 6; 
         public static Point TopSpawn = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,100);

@@ -16,7 +16,6 @@ namespace HaloMiniGame.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-            DrawLabel(cast, Constants.LEVEL_GROUP, Constants.LEVEL_FORMAT, stats.GetLevel());
             DrawLabel(cast, Constants.LIVES_GROUP, Constants.LIVES_FORMAT, stats.GetLives());
         }
 

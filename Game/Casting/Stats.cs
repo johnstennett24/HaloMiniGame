@@ -58,11 +58,7 @@ namespace HaloMiniGame.Game.Casting
         /// </summary>
         public void RemoveLife()
         {
-            lives--;
-            if (lives <= 0)
-            {
-                lives = 0;
-            }
+            lives -= 1;
         }
     
         public void SetTime(float ntimer)
