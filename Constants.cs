@@ -112,10 +112,12 @@ namespace HaloMiniGame
         public static int ENEMY_RATE = 4;
         public static int ENEMY_WIDTH = 100;
         public static int ENEMY_HEIGHT = 98;
-        public static Point TopSpawn = new Point(Constants.CENTER_X,0);
-        public static Point RightSpawn = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,Constants.CENTER_Y);
-        public static Point BottomSpawn = new Point(Constants.CENTER_X,Constants.SCREEN_HEIGHT - Constants.ENEMY_HEIGHT);
-        public static Point LeftSpawn = new Point(0,Constants.CENTER_Y);
+        public static int ENEMY_VELOCITY_X = 3;
+        public static int ENEMY_VELOCITY_Y = 6; 
+        public static Point TopSpawn = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,100);
+        public static Point RightSpawn = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,300);
+        public static Point BottomSpawn = new Point(Constants.SCREEN_WIDTH - Constants.ENEMY_WIDTH,500);
+        
 
 
         // DIALOG - Create our own dialogue

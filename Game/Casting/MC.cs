@@ -9,7 +9,7 @@ namespace HaloMiniGame.Game.Casting
     /// </summary>
     public class MC : Actor
     {
-        private int health = 3;
+        public int health = 3;
 
         private Body body;
         private Image image;
@@ -39,6 +39,20 @@ namespace HaloMiniGame.Game.Casting
         public Image GetImage()
         {
             return image;
+        }
+
+        public int GetHealth()
+        {
+            return health;
+        }
+
+        public void SetHealth(int health)
+        {
+            if (health == null)
+            {
+                throw new ArgumentException("health can't be null");
+            }
+            this.health = health;
         }
 
         public void Left()

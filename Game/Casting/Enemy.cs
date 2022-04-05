@@ -41,6 +41,20 @@ namespace HaloMiniGame.Game.Casting
             return image;
         }
 
+        public int GetHealth()
+        {
+            return health;
+        }
+
+        public void SetHealth(int health)
+        {
+            if (health == null)
+            {
+                throw new ArgumentException("health can't be null");
+            }
+            this.health = health;
+        }
+
         public void MoveNext(int maxX, int maxY, Point McPosition)
         {
           // int x = ((McPosition.GetX() / position.GetX()) + maxX) % maxX;

@@ -4,16 +4,17 @@ using HaloMiniGame.Game.Casting;
 
 namespace HaloMiniGame.Game.Scripting
 {
-
-    
+   
 
     public class CollideEnemyAction : Action
     {
         private AudioService audioService;
+        private PhysicsService physicsService;
         
-        public CollideEnemyAction(AudioService audioService)
+        public CollideEnemyAction(PhysicsService physicsService,AudioService audioService)
         {
             this.audioService = audioService;
+            this.physicsService = physicsService;
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
@@ -22,6 +23,15 @@ namespace HaloMiniGame.Game.Scripting
             Enemy enemy = (Enemy)cast.GetFirstActor(Constants.ENEMY_GROUP);
             Body MCBody = mC.GetBody();
             Body EnemyBody = enemy.GetBody();
+            int health = mC.GetHealth();
+
+            if (physicsService.HasCollided(MCBody, EnemyBody))
+            {
+                health = health -1;
+
+                Console.WriteLine(mC.health);
+            }
+            mC.SetHealth(health);
         }
     }
 }

@@ -13,11 +13,13 @@ namespace HaloMiniGame.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            MC mC = (MC)cast.GetFirstActor(Constants.MC_GROUP);
-            Point position = mC.GetBody().GetPosition();
-            Enemy enemy = (Enemy)cast.GetFirstActor(Constants.ENEMY_GROUP);
-            Point velocity = position;
-            enemy.SetVelocity(velocity);
+            foreach (Enemy enemy in cast.GetActors(Constants.ENEMY_GROUP))
+            {
+                MC mC = (MC)cast.GetFirstActor(Constants.MC_GROUP);
+                Point position = mC.GetBody().GetPosition();
+                Point velocity = new Point(-Constants.ENEMY_VELOCITY_X,0);
+                enemy.GetBody().SetVelocity(velocity);
+            }
         }
     }
 }

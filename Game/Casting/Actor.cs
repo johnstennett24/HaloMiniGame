@@ -12,7 +12,6 @@ namespace HaloMiniGame.Game.Casting
     /// </summary>
     public class Actor
     {
-        private int health = 3;
         private Point position = new Point(0, 0);
         private Point velocity = new Point(0, 0);
         private bool debug;
@@ -48,21 +47,6 @@ namespace HaloMiniGame.Game.Casting
         {
             return velocity;
         }
-
-        public int GetHealth()
-        {
-            return health;
-        }
-
-        public void SetHealth(int health)
-        {
-            if (health == null)
-            {
-                throw new ArgumentException("health can't be null");
-            }
-            this.health = health;
-        }
-
 
         /// <summary>
         /// Sets the actor's position to the given value.

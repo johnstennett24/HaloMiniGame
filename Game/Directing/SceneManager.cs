@@ -13,6 +13,8 @@ namespace HaloMiniGame.Game.Directing
         public static AudioService AudioService = new RaylibAudioService();
         public static KeyboardService KeyboardService = new RaylibKeyboardService();
         public static MouseService MouseService = new RaylibMouseService();
+        public static PhysicsService PhysicsService = new RaylibPhysicsService();
+
         public static VideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
             Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
 
@@ -76,7 +78,7 @@ namespace HaloMiniGame.Game.Directing
         {
             cast.ClearActors(Constants.MC_GROUP);
         
-            int x = Constants.CENTER_X;
+            int x = Constants.MC_WIDTH;
             int y = Constants.CENTER_Y;
         
             Point position = new Point(x, y);
@@ -99,7 +101,6 @@ namespace HaloMiniGame.Game.Directing
             enemyPoints.Add(Constants.TopSpawn);
             enemyPoints.Add(Constants.RightSpawn);
             enemyPoints.Add(Constants.BottomSpawn);
-            enemyPoints.Add(Constants.LeftSpawn);
 
             for (int i = 0; i < enemyPoints.Count; i ++)
             {
@@ -210,13 +211,14 @@ namespace HaloMiniGame.Game.Directing
                 VideoService));
         }
 
-        private void AddUpdateActions(Script script)
+        private void AddUpdateActions(Script script) 
         {
             script.AddAction(Constants.UPDATE, new ControlActorsAction(KeyboardService));
+            script.AddAction(Constants.UPDATE, new ControlEnemyAction());
             script.AddAction(Constants.UPDATE, new MoveEnemyAction());
             script.AddAction(Constants.UPDATE, new MoveActorsAction());
             script.AddAction(Constants.UPDATE, new CollideBordersAction(AudioService));
-            script.AddAction(Constants.UPDATE, new CollideEnemyAction(AudioService));
+            script.AddAction(Constants.UPDATE, new CollideEnemyAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CheckOverAction());     
         }
     }
