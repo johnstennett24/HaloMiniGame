@@ -28,10 +28,11 @@ namespace HaloMiniGame.Game.Scripting
             if (physicsService.HasCollided(MCBody, EnemyBody))
             {
                 health = health -1;
-
+                mC.SetHealth(health);
+                cast.RemoveActor(Constants.ENEMY_GROUP, enemy);
                 Console.WriteLine(mC.health);
             }
-            mC.SetHealth(health);
+            
         }
     }
 }
