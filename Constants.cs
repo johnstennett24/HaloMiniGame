@@ -105,6 +105,11 @@ namespace HaloMiniGame
         public static string MC_IMAGE = "Assets/Pictures/mc.png";
 
         public static string BULLET_GROUP = "bullet";
+        public static int BULLET_WIDTH = 10;
+        public static int BULLET_HEIGHT = 10;
+        public static int BULLET_VELOCITY_X = 6; 
+
+        public static string BULLET_IMAGE = "Assets/Pictures/bullet.png";
         
 
 

@@ -217,6 +217,7 @@ namespace HaloMiniGame.Game.Directing
             script.AddAction(Constants.UPDATE, new ControlActorsAction(KeyboardService));
             script.AddAction(Constants.UPDATE, new ControlEnemyAction());
             script.AddAction(Constants.UPDATE, new MoveEnemyAction());
+            script.AddAction(Constants.UPDATE, new SpawnBulletAction(KeyboardService));
             script.AddAction(Constants.UPDATE, new ControlBulletAction(AudioService, KeyboardService));
             script.AddAction(Constants.UPDATE, new MoveBullet(AudioService));
             script.AddAction(Constants.UPDATE, new DrawBulletAction(VideoService));

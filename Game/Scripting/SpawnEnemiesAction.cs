@@ -11,10 +11,7 @@ namespace HaloMiniGame.Game.Scripting
         private DateTime lastSpawn;
         private float spawnInterval_ms;
         private Random randomGenerator;
-        // Clock clock;
-
-
-
+    
         public SpawnEnemiesAction(float spawnInterval)
         {
             spawnPoints.Add(Constants.Spawn1);
@@ -31,11 +28,7 @@ namespace HaloMiniGame.Game.Scripting
             // this.clock = clock;
         }
 
-        // public void Execute(Cast cast, Script script, ActionCallback callback)
-        // {   
-
-        //     SpawnEnemie(cast, script, clock, callback);
-        // }
+    
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             if (!this.timerStarted)

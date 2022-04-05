@@ -7,7 +7,7 @@ namespace HaloMiniGame.Game.Casting
         private Body body;
         private Image image;
 
-        public bullet(Body body, Image image, Point velocity, bool debug = false) : base(debug)
+        public bullet(Body body, Image image, bool debug = false) : base(debug)
         {
             this.body = body;
             this.image = image;
@@ -27,7 +27,7 @@ namespace HaloMiniGame.Game.Casting
         }
         public void Shoot()
         {
-            Point velocity = new Point(0, 12);
+            Point velocity = new Point(Constants.BULLET_VELOCITY_X,0);
             body.SetVelocity(velocity);
         }
          public void MoveNext(int maxX, int maxY, Point MousePosition)

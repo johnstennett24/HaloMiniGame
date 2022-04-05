@@ -18,9 +18,9 @@ namespace HaloMiniGame.Game.Scripting
            
             foreach (bullet bullet in cast.GetActors(Constants.BULLET_GROUP))
             {
-                MC mC = (MC)cast.GetFirstActor(Constants.MC_GROUP);
-                Point position = mC.GetBody().GetPosition();
-                bullet.GetBody().SetPosition(position);
+                Point position = bullet.GetBody().GetPosition();
+                position = position.Add(bullet.GetBody().GetVelocity());
+                bullet.GetBody().SetPosition(position); 
             }
         }
     }

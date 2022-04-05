@@ -1,6 +1,5 @@
 using HaloMiniGame.Game.Casting;
 using HaloMiniGame.Game.Directing;
-using HaloMiniGame.Game.Scripting;
 using HaloMiniGame.Game.Services;
 
 namespace HaloMiniGame.Game.Scripting
@@ -19,11 +18,9 @@ namespace HaloMiniGame.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {   
             foreach (bullet bullet in cast.GetActors(Constants.BULLET_GROUP))
-            {
-                if (keyboardService.IsKeyDown(Constants.SPACE))
-                {
-                    bullet.Shoot();
-                }
+            {            
+                bullet.Shoot();
+    
             }
         }
     }

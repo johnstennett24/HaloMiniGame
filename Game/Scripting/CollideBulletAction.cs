@@ -22,21 +22,24 @@ namespace HaloMiniGame.Game.Scripting
             List<Actor> enemies = cast.GetActors(Constants.ENEMY_GROUP);
             List<Actor> bullets = cast.GetActors(Constants.BULLET_GROUP);
             
-            foreach (Actor actor in enemies)
+            foreach (Actor actor1 in enemies)
             {
-                Enemy enemy = (Enemy)actor;
+                Enemy enemy = (Enemy)actor1;
                 Body EnemyBody = enemy.GetBody();
-                bullet bullet = (bullet)actor;
-                Body bulletbody = bullet.GetBody();
-
-                if (physicsService.HasCollided(bulletbody, EnemyBody))
+                foreach (Actor actor2  in bullets)
                 {
-                    Sound sound = new Sound(Constants.GETTING_SHOT_SOUND);
-                    audioService.PlaySound(sound);
-                    cast.RemoveActor(Constants.ENEMY_GROUP, enemy);
+                    bullet bullet = (bullet)actor2;
+                    Body bulletbody = bullet.GetBody();
+
+                    if (physicsService.HasCollided(bulletbody, EnemyBody))
+                    {
+                        Sound sound = new Sound(Constants.GETTING_SHOT_SOUND);
+                        audioService.PlaySound(sound);
+                        cast.RemoveActor(Constants.ENEMY_GROUP, enemy);
+                        cast.RemoveActor(Constants.BULLET_GROUP, bullet);
+                    }
                 }
             }
-            
         }
     }
 }
