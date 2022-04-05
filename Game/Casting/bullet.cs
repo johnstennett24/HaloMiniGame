@@ -6,7 +6,6 @@ namespace HaloMiniGame.Game.Casting
     {
         private Body body;
         private Image image;
-        private Point position = new Point(0, 0);
 
         public bullet(Body body, Image image, Point velocity, bool debug = false) : base(debug)
         {
@@ -26,11 +25,16 @@ namespace HaloMiniGame.Game.Casting
         {
             return image;
         }
+        public void Shoot()
+        {
+            Point velocity = new Point(0, 12);
+            body.SetVelocity(velocity);
+        }
          public void MoveNext(int maxX, int maxY, Point MousePosition)
         {
-            int x = ((MousePosition.GetX() / position.GetX()) + maxX) % maxX;
-            int y = ((MousePosition.GetY() / position.GetY()) + maxY) % maxY;
-            position = new Point(x, y);
+           // int x = ((MousePosition.GetX() / position.GetX()) + maxX) % maxX;
+           // int y = ((MousePosition.GetY() / position.GetY()) + maxY) % maxY;
+           // position = new Point(x, y);
         }
     }
 }
